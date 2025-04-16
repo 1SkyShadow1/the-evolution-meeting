@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,7 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { submitContactForm } from "@/services/contact.service";
+import { submitContactForm, ContactMessage } from "@/services/contact.service";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -45,7 +44,14 @@ const Contact = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      const result = await submitContactForm(data);
+      const contactMessage: ContactMessage = {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message
+      };
+      
+      const result = await submitContactForm(contactMessage);
       
       if (result.success) {
         toast.success("Your message has been sent successfully!");
