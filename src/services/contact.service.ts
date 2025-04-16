@@ -1,6 +1,5 @@
 
-import { supabase } from "@/integrations/supabase/client";
-
+// Defining the interface for contact messages
 export interface ContactMessage {
   name: string;
   email: string;
@@ -8,17 +7,14 @@ export interface ContactMessage {
   message: string;
 }
 
+// Mock function for submitting contact form while Supabase setup is pending
 export const submitContactForm = async (contactMessage: ContactMessage) => {
   try {
-    const { data, error } = await supabase
-      .from('contact_messages')
-      .insert([contactMessage]);
+    // Log the message to console (temporary solution until Supabase is set up)
+    console.log('Contact form submission:', contactMessage);
     
-    if (error) {
-      throw error;
-    }
-    
-    return { success: true, data };
+    // Simulate a successful API call
+    return { success: true, data: { id: 'mock-id', ...contactMessage } };
   } catch (error) {
     console.error('Error submitting contact form:', error);
     return { success: false, error };

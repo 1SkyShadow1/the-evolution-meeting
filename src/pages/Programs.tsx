@@ -11,7 +11,7 @@ const Programs = () => {
     <Layout>
       {/* Hero Section */}
       <HeroSection
-        backgroundImage="/images/gbv-support.jpg"
+        backgroundImage="https://images.unsplash.com/photo-1582213782179-e0d4d3cce817?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
         title="OUR PROGRAMS"
         subtitle="Comprehensive Support for Healing and Recovery"
       />

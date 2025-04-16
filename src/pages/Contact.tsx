@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -69,7 +70,7 @@ const Contact = () => {
   return (
     <Layout>
       <HeroSection
-        backgroundImage="/images/contact-bg.jpg"
+        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
         title="CONTACT US"
         subtitle="We're here to help. Get in touch with us."
       />
