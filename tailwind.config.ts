@@ -52,6 +52,29 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Evolution Meeting brand colors
+				em: {
+					purple: {
+						DEFAULT: '#9b87f5',
+						dark: '#7E69AB',
+						light: '#D6BCFA',
+					},
+					red: {
+						DEFAULT: '#ea384c',
+						light: '#f87171',
+						dark: '#b91c1c',
+					},
+					blue: {
+						DEFAULT: '#1EAEDB',
+						light: '#7dd3fc',
+						dark: '#0369a1',
+					},
+					grey: {
+						DEFAULT: '#8E9196',
+						light: '#e5e7eb',
+						dark: '#403E43',
+					},
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
