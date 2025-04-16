@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,11 +17,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Primary colors - Purple */
-    --primary: 258 82% 74%;
+    /* Primary colors - Purple from logo */
+    --primary: 258 80% 75%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary colors - Red */
+    /* Secondary colors - Red from logo */
     --secondary: 354 83% 57%;
     --secondary-foreground: 0 0% 100%;
 
@@ -28,7 +29,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* Accent colors - Blue */
+    /* Accent colors - Blue from logo */
     --accent: 195 74% 49%;
     --accent-foreground: 0 0% 100%;
 
@@ -39,7 +40,7 @@
     /* Border, Input, Ring colors */
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 258 82% 74%;
+    --ring: 258 80% 75%;
 
     /* Border radius */
     --radius: 0.5rem;
@@ -47,12 +48,12 @@
     /* Sidebar colors */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 258 80% 75%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 258 80% 75%;
   }
 
   .dark {
@@ -68,11 +69,11 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    /* Primary colors - Purple */
-    --primary: 258 82% 74%;
+    /* Primary colors - Purple from logo */
+    --primary: 258 80% 75%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary colors - Red */
+    /* Secondary colors - Red from logo */
     --secondary: 354 83% 57%;
     --secondary-foreground: 0 0% 100%;
 
@@ -80,7 +81,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    /* Accent colors - Blue */
+    /* Accent colors - Blue from logo */
     --accent: 195 74% 49%;
     --accent-foreground: 0 0% 100%;
 
@@ -96,7 +97,7 @@
     /* Sidebar colors */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 258 80% 75%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;

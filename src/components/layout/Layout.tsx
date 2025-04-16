@@ -18,6 +18,7 @@ const backgroundImages: Record<string, string> = {
   "/contact": "/images/contact-bg.jpg",
   "/impact-stories": "/images/impact-story1.jpg",
   "/volunteer": "/images/volunteer-bg.jpg",
+  "/events": "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
 };
 
 const Layout = ({ children }: LayoutProps) => {
@@ -29,14 +30,10 @@ const Layout = ({ children }: LayoutProps) => {
     setBackgroundImage(backgroundImages[location.pathname] || "");
   }, [location.pathname]);
 
-  // Exclude background for events page
-  const excludeBackground = location.pathname === "/events";
-
   return (
     <PageWrapper 
       backgroundImage={backgroundImage}
       logo="/lovable-uploads/389bbe33-4636-49d1-a3f0-27cc7fe663a6.png"
-      excludeBackground={excludeBackground}
     >
       <div className="flex flex-col min-h-screen">
         <Navbar />

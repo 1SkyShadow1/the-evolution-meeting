@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [location]);
 
   // Background is either transparent when at top (if not scrolled) or our brand purple when scrolled
-  const navBackground = isScrolled ? "bg-[#482683]" : "bg-transparent";
+  const navBackground = isScrolled ? "bg-[#9b87f5]" : "bg-transparent";
   // If we're on a page with a background image, the shadow should only appear when scrolled
   const navShadow = isScrolled ? "shadow-md" : "";
 
@@ -84,50 +84,50 @@ const Navbar = () => {
       {/* Mobile Navigation - Slide down animation */}
       <div 
         className={cn(
-          "md:hidden absolute w-full bg-[#482683] shadow-lg transition-all duration-300 overflow-hidden",
+          "md:hidden absolute w-full bg-[#9b87f5] shadow-lg transition-all duration-300 overflow-hidden",
           isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link 
             to="/" 
-            className="block px-3 py-2 text-white hover:bg-purple-800 rounded-md"
+            className="block px-3 py-2 text-white hover:bg-[#7E69AB] rounded-md"
           >
             Home
           </Link>
           <Link 
             to="/about" 
-            className="block px-3 py-2 text-white hover:bg-purple-800 rounded-md"
+            className="block px-3 py-2 text-white hover:bg-[#7E69AB] rounded-md"
           >
             About
           </Link>
           <Link 
             to="/programs" 
-            className="block px-3 py-2 text-white hover:bg-purple-800 rounded-md"
+            className="block px-3 py-2 text-white hover:bg-[#7E69AB] rounded-md"
           >
             Programs
           </Link>
           <Link 
             to="/events" 
-            className="block px-3 py-2 text-white hover:bg-purple-800 rounded-md"
+            className="block px-3 py-2 text-white hover:bg-[#7E69AB] rounded-md"
           >
             Events
           </Link>
           <Link 
             to="/impact-stories" 
-            className="block px-3 py-2 text-white hover:bg-purple-800 rounded-md"
+            className="block px-3 py-2 text-white hover:bg-[#7E69AB] rounded-md"
           >
             Impact Stories
           </Link>
           <Link 
             to="/volunteer" 
-            className="block px-3 py-2 text-white hover:bg-purple-800 rounded-md"
+            className="block px-3 py-2 text-white hover:bg-[#7E69AB] rounded-md"
           >
             Volunteer
           </Link>
           <Link 
             to="/contact" 
-            className="block px-3 py-2 text-white hover:bg-purple-800 rounded-md"
+            className="block px-3 py-2 text-white hover:bg-[#7E69AB] rounded-md"
           >
             Contact
           </Link>

@@ -6,14 +6,12 @@ interface PageWrapperProps {
   backgroundImage?: string;
   logo?: string;
   children: React.ReactNode;
-  excludeBackground?: boolean;
 }
 
 const PageWrapper = ({
   backgroundImage,
   logo = "/lovable-uploads/7bb3a010-7684-44a5-9829-b69a484e6b17.png",
   children,
-  excludeBackground = false,
 }: PageWrapperProps) => {
   const [bgLoadError, setBgLoadError] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
@@ -32,7 +30,7 @@ const PageWrapper = ({
   };
 
   // Validate background image
-  const validBackgroundImage = backgroundImage && !bgLoadError && !excludeBackground;
+  const validBackgroundImage = backgroundImage && !bgLoadError;
   
   return (
     <div
