@@ -11,13 +11,13 @@ interface LayoutProps {
 
 // Map of routes to background images
 const backgroundImages: Record<string, string> = {
-  "/": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-  "/about": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
+  "/": "/lovable-uploads/e1f366ed-7704-4e50-8c72-bd71ecc788b0.png", 
+  "/about": "/lovable-uploads/527e71fc-e66b-4a79-bad7-a2826344e602.png",
   "/programs": "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
   "/donate": "/lovable-uploads/a83c16cf-cd8e-4974-b4f5-89cf7185846f.png",
   "/contact": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
   "/impact-stories": "/lovable-uploads/29ccc5e1-a424-43e3-a911-d1bd3e986d88.png",
-  "/volunteer": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
+  "/volunteer": "/lovable-uploads/9d705f7a-43a5-452a-b2a3-679ecd5ee93f.png", 
   "/events": "/lovable-uploads/a73250b9-5837-4843-92a3-60996ef464d1.png"
 };
 

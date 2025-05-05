@@ -55,7 +55,7 @@ const PageWrapper = ({
             style={{ backgroundImage: `url(${backgroundImage})` }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+          <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
         </>
       )}
       
