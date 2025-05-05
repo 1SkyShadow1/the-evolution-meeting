@@ -168,8 +168,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Phone</h3>
-                    <p className="text-gray-600 mb-1">(+27) 61 099 4222</p>
-                    <p className="text-gray-600">(+27) 72 331 5015</p>
+                    <p className="text-gray-600 mb-1">(+27) 72 331 5015</p>
+                    <p className="text-gray-600">(+27) 61 976 2871</p>
                   </div>
                 </div>
                 
@@ -179,7 +179,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Email</h3>
-                    <p className="text-gray-600">info@theevolutionmeeting.org</p>
+                    <p className="text-gray-600 mb-1">evolutionmeeting14@gmail.com</p>
+                    <p className="text-gray-600">info@evomeeting.org</p>
                   </div>
                 </div>
                 
@@ -189,7 +190,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Address</h3>
-                    <p className="text-gray-600">61, 6th Avenue, Edenvale, 1609<br />South Africa</p>
+                    <p className="text-gray-600">Unit 189, 67 on 7th avenue, Edenvale 1610<br />South Africa</p>
                   </div>
                 </div>
                 
@@ -208,7 +209,7 @@ const Contact = () => {
               <div className="mt-10">
                 <h3 className="font-bold mb-3">Registration Information</h3>
                 <p className="text-gray-600">Registration Date: 05 June 2014</p>
-                <p className="text-gray-600">Registration Number: 137-164</p>
+                <p className="text-gray-600">Registration Number: 137-164 NPO</p>
                 <p className="text-gray-600">PBO: 9761722165</p>
               </div>
             </div>
@@ -219,7 +220,7 @@ const Contact = () => {
       {/* Google Map */}
       <section className="h-96 w-full">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.7555646510253!2d28.130629976204596!3d-26.1372176669096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95122ba0145aef%3A0xb3a314e13bb9f70c!2s61%206th%20Ave%2C%20Edenvale%2C%20Johannesburg%2C%201609%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1714860435943!5m2!1sen!2sus" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.555167714315!2d28.16325378819838!3d-26.143114659165306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9516a24893438d%3A0xa496fdee40b33cf!2s67%20on%207th%20Avenue!5e0!3m2!1sen!2sus!4v1714913923032!5m2!1sen!2sus" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 

@@ -3,15 +3,16 @@ import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, Clock, AlertCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   return (
     <Layout>
       <HeroSection
-        backgroundImage="/lovable-uploads/310e2609-1298-4780-bbc8-71297db433ef.png"
+        backgroundImage="https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
         title="EVENTS"
-        subtitle="Join us and be part of the change"
+        subtitle="Follow Us for Future Updates and Events"
       />
 
       <section className="section-padding">
@@ -46,13 +47,29 @@ const Events = () => {
 
       <section className="py-16 bg-gray-50 text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Want to Organize an Event with Us?</h2>
-          <p className="text-lg max-w-2xl mx-auto mb-10">
-            If you're interested in partnering with The Evolution Meeting for community outreach, awareness campaigns, or educational workshops, please get in touch.
+          <div className="flex items-center justify-center mb-6">
+            <AlertCircle className="h-8 w-8 mr-3 text-em-red" />
+            <h2 className="text-2xl md:text-3xl font-bold">Our Mission</h2>
+          </div>
+          <p className="text-lg max-w-3xl mx-auto mb-6">
+            "OUR HEART IN YOUR SERVICE" - The Evolution Meeting is committed to helping the generation be free from substance abuse.
           </p>
-          <Button asChild size="lg" className="bg-em-red hover:bg-em-red-dark">
-            <a href="/contact">Contact Our Team</a>
-          </Button>
+          <div className="flex flex-col md:flex-row gap-6 max-w-4xl mx-auto">
+            <div className="bg-white p-6 rounded-lg shadow-md flex-1">
+              <Clock className="h-10 w-10 mx-auto mb-4 text-em-purple" />
+              <h3 className="text-xl font-bold mb-2">Established</h3>
+              <p>Since 2014, we've been working to improve the physical, spiritual, and health of substance abusers and build community alliances to prevent and reduce substance abuse.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md flex-1">
+              <h3 className="text-xl font-bold mb-2">BE DRUG FREE!</h3>
+              <p>Our program aims to deal with stigma and teach communities how to be substance abuse-free. We provide comprehensive support, including counseling, support groups, and education.</p>
+            </div>
+          </div>
+          <div className="mt-10">
+            <Button asChild size="lg" className="bg-em-red hover:bg-em-red-dark">
+              <Link to="/contact">Contact Our Team</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>
