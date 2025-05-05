@@ -10,7 +10,7 @@ const Events = () => {
   return (
     <Layout>
       <HeroSection
-        backgroundImage="https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+        backgroundImage="/lovable-uploads/a73250b9-5837-4843-92a3-60996ef464d1.png"
         title="EVENTS"
         subtitle="Follow Us for Future Updates and Events"
       />
