@@ -10,7 +10,7 @@ interface PageWrapperProps {
 
 const PageWrapper = ({
   backgroundImage,
-  logo = "/lovable-uploads/7bb3a010-7684-44a5-9829-b69a484e6b17.png",
+  logo = "/lovable-uploads/389bbe33-4636-49d1-a3f0-27cc7fe663a6.png",
   children,
 }: PageWrapperProps) => {
   const [bgLoadError, setBgLoadError] = useState(false);

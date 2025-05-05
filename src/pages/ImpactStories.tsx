@@ -23,7 +23,7 @@ const ImpactStories = () => {
       
       <p>Without The Evolution Meeting and their donors who make these services possible, I don't know where I—or my children—would be today. They didn't just save my life; they helped me create a new one filled with purpose and joy.</p>
     `,
-    image: "/images/impact-story1.jpg",
+    image: "/lovable-uploads/29ccc5e1-a424-43e3-a911-d1bd3e986d88.png",
     date: "May 12, 2026",
     author: "Nomsa M."
   };
@@ -33,7 +33,7 @@ const ImpactStories = () => {
       id: 2,
       title: "Breaking the Cycle: John's Road to Recovery",
       excerpt: "After three failed attempts at sobriety, John found our program. Two years later, he's sober, employed, and reunited with his children.",
-      image: "/images/impact-story2.jpg",
+      image: "/lovable-uploads/f25698a2-bc66-454f-9e74-358070475c22.png",
       date: "April 28, 2026",
       author: "John K."
     },
@@ -41,7 +41,7 @@ const ImpactStories = () => {
       id: 3,
       title: "Community Champions: Teenagers Taking a Stand",
       excerpt: "How our school outreach program inspired a group of teenagers to launch an anti-GBV campaign that reached thousands.",
-      image: "/images/impact-story3.jpg",
+      image: "/lovable-uploads/e59516f7-e31c-49a4-bc9d-52b84e4dcf66.png",
       date: "April 05, 2026",
       author: "Edenvale High School Students"
     },
@@ -49,7 +49,7 @@ const ImpactStories = () => {
       id: 4,
       title: "A Family Healed: Sarah's Story of Recovery",
       excerpt: "Sarah's addiction tore her family apart. Through recovery and family counseling, they found a path to forgiveness and reunion.",
-      image: "/images/substance-abuse.jpg",
+      image: "/lovable-uploads/73570143-4523-4347-b986-ae8985cfbdf2.png",
       date: "March 17, 2026",
       author: "Sarah M."
     },
@@ -57,7 +57,7 @@ const ImpactStories = () => {
       id: 5,
       title: "Finding Voice: A Survivor Becomes an Advocate",
       excerpt: "After escaping an abusive relationship, Thabo found healing through advocacy, now leading community education workshops.",
-      image: "/images/community-engagement.jpg",
+      image: "/lovable-uploads/de82f759-0eba-4204-ad0b-d4cbbd04d57d.png",
       date: "March 03, 2026",
       author: "Thabo N."
     },
@@ -65,7 +65,7 @@ const ImpactStories = () => {
       id: 6,
       title: "The Healing Power of Community: Maria's Journey",
       excerpt: "Isolated by abuse, Maria found connection and healing in our support groups, rebuilding her life one relationship at a time.",
-      image: "/images/gbv-support.jpg",
+      image: "/lovable-uploads/5c5a5c2a-9dee-466b-b745-dd0c539a21a0.png",
       date: "February 22, 2026",
       author: "Maria L."
     }
@@ -75,7 +75,7 @@ const ImpactStories = () => {
     <Layout>
       {/* Hero Section */}
       <HeroSection
-        backgroundImage="/images/impact-story1.jpg"
+        backgroundImage="/lovable-uploads/29ccc5e1-a424-43e3-a911-d1bd3e986d88.png"
         title="IMPACT STORIES"
         subtitle="Real Stories of Transformation and Hope"
       />
