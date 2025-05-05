@@ -34,6 +34,10 @@ const EventCard = ({
             src={image} 
             alt={title} 
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            onError={(e) => {
+              console.error(`Failed to load image: ${image}`);
+              e.currentTarget.src = "/placeholder.svg";
+            }}
           />
         </div>
       )}

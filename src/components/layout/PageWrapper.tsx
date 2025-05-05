@@ -15,6 +15,7 @@ const PageWrapper = ({
 }: PageWrapperProps) => {
   const [bgLoadError, setBgLoadError] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     // Add fade-in animation on page load
@@ -22,12 +23,19 @@ const PageWrapper = ({
     
     // Reset image error state when the component re-renders with a new background
     setBgLoadError(false);
-  }, [backgroundImage]);
+    setImageLoaded(false);
 
-  const handleImageError = () => {
-    console.error("Background image failed to load");
-    setBgLoadError(true);
-  };
+    // Preload image to check if it exists
+    if (backgroundImage) {
+      const img = new Image();
+      img.onload = () => setImageLoaded(true);
+      img.onerror = () => {
+        console.error("Background image failed to load:", backgroundImage);
+        setBgLoadError(true);
+      };
+      img.src = backgroundImage;
+    }
+  }, [backgroundImage]);
 
   // Validate background image
   const validBackgroundImage = backgroundImage && !bgLoadError;
@@ -45,7 +53,6 @@ const PageWrapper = ({
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${backgroundImage})` }}
-            onError={handleImageError}
             aria-hidden="true"
           />
           <div className="absolute inset-0 bg-black/50" aria-hidden="true" />

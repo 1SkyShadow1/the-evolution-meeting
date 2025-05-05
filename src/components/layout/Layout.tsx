@@ -18,7 +18,7 @@ const backgroundImages: Record<string, string> = {
   "/contact": "/images/contact-bg.jpg",
   "/impact-stories": "/images/impact-story1.jpg",
   "/volunteer": "/images/volunteer-bg.jpg",
-  "/events": "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+  "/events": "/lovable-uploads/d28296bc-4c69-45ab-9e2e-f65d68b61715.png"
 };
 
 const Layout = ({ children }: LayoutProps) => {
@@ -27,7 +27,9 @@ const Layout = ({ children }: LayoutProps) => {
   
   useEffect(() => {
     // Set background image based on current route
-    setBackgroundImage(backgroundImages[location.pathname] || "");
+    const bgImage = backgroundImages[location.pathname] || "";
+    console.log("Setting background image:", bgImage, "for route:", location.pathname);
+    setBackgroundImage(bgImage);
   }, [location.pathname]);
 
   return (
