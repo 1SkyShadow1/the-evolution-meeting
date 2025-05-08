@@ -36,30 +36,14 @@ const PageWrapper = ({
       img.src = backgroundImage;
     }
   }, [backgroundImage]);
-
-  // Validate background image
-  const validBackgroundImage = backgroundImage && !bgLoadError;
   
   return (
     <div
       className={cn(
         "min-h-screen w-full transition-opacity duration-500",
-        fadeIn ? "opacity-100" : "opacity-0",
-        !validBackgroundImage && "bg-gray-100"
+        fadeIn ? "opacity-100" : "opacity-0"
       )}
     >
-      {/* Hero section with background image - Full height/width */}
-      {validBackgroundImage && (
-        <div className="relative">
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[500px]"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-            aria-hidden="true"
-          />
-          <div className="absolute inset-0 bg-black/60 h-[500px]" aria-hidden="true" />
-        </div>
-      )}
-      
       <div className="relative z-10 w-full min-h-screen">
         {children}
       </div>
