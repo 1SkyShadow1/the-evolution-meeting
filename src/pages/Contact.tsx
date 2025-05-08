@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -6,6 +5,7 @@ import * as z from "zod";
 import { toast } from "sonner";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
+import SectionHeading from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -70,16 +70,15 @@ const Contact = () => {
   return (
     <Layout>
       <HeroSection
-        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
         title="CONTACT US"
         subtitle="We're here to help. Get in touch with us."
       />
 
-      <section className="section-padding">
+      <section className="section-padding bg-[#222222] text-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="bg-white text-gray-800 rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold mb-6 text-em-purple">Send Us a Message</h2>
               
               <Form {...form}>
@@ -159,7 +158,7 @@ const Contact = () => {
             
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-bold mb-6 text-em-purple">Contact Information</h2>
+              <h2 className="text-2xl font-bold mb-6 text-white">Contact Information</h2>
               
               <div className="space-y-8">
                 <div className="flex items-start">
@@ -207,10 +206,10 @@ const Contact = () => {
               </div>
               
               <div className="mt-10">
-                <h3 className="font-bold mb-3">Registration Information</h3>
-                <p className="text-gray-600">Registration Date: 05 June 2014</p>
-                <p className="text-gray-600">Registration Number: 137-164 NPO</p>
-                <p className="text-gray-600">PBO: 9761722165</p>
+                <h3 className="font-bold mb-3 text-white">Registration Information</h3>
+                <p className="text-gray-300">Registration Date: 05 June 2014</p>
+                <p className="text-gray-300">Registration Number: 137-164 NPO</p>
+                <p className="text-gray-300">PBO: 9761722165</p>
               </div>
             </div>
           </div>

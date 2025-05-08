@@ -28,10 +28,10 @@ const HeroSection = ({
   secondaryCta,
 }: HeroSectionProps) => {
   return (
-    <div className="relative z-10 pt-20 pb-16 px-4 sm:pt-24 sm:pb-20 md:pt-32 md:pb-24">
+    <div className="relative z-10 flex items-center justify-center min-h-[500px] pt-20 pb-16 px-4 sm:pb-20 md:pb-24">
       <div className="container mx-auto text-center text-white">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">{title}</h1>
-        {subtitle && <p className="text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto">{subtitle}</p>}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-shadow-lg">{title}</h1>
+        {subtitle && <p className="text-xl md:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto text-shadow-md">{subtitle}</p>}
         
         {quote && (
           <div className="max-w-2xl mx-auto mb-8 bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6">

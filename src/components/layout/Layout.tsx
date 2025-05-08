@@ -39,8 +39,11 @@ const Layout = ({ children }: LayoutProps) => {
     >
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow bg-white text-gray-800">
-          {children}
+        <main className="flex-grow">
+          <div className="bg-transparent">
+            {/* Hero section dynamically rendered from each page */}
+            {children}
+          </div>
         </main>
         <Footer />
       </div>

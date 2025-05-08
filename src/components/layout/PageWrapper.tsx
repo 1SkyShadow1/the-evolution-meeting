@@ -48,15 +48,15 @@ const PageWrapper = ({
         !validBackgroundImage && "bg-gray-100"
       )}
     >
-      {/* Hero section with background image */}
+      {/* Hero section with background image - Full height/width */}
       {validBackgroundImage && (
         <div className="relative">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[400px]"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[500px]"
             style={{ backgroundImage: `url(${backgroundImage})` }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-black/70 h-[400px]" aria-hidden="true" />
+          <div className="absolute inset-0 bg-black/60 h-[500px]" aria-hidden="true" />
         </div>
       )}
       
