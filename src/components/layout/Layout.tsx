@@ -39,7 +39,7 @@ const Layout = ({ children }: LayoutProps) => {
     >
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow bg-white text-gray-800">
           {children}
         </main>
         <Footer />

@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
@@ -10,13 +9,12 @@ const About = () => {
     <Layout>
       {/* Hero Section */}
       <HeroSection
-        backgroundImage="/images/about-hero.jpg"
         title="ABOUT US"
         subtitle="Our Story and Vision"
       />
 
       {/* Our Story Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -83,7 +81,7 @@ const About = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
             title="Our Journey" 
@@ -188,7 +186,7 @@ const About = () => {
       </section>
 
       {/* Call To Action Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Join Our Mission</h2>
           <p className="text-xl max-w-2xl mx-auto mb-10">

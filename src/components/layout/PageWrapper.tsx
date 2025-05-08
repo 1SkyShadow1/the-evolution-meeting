@@ -45,24 +45,22 @@ const PageWrapper = ({
       className={cn(
         "min-h-screen w-full transition-opacity duration-500",
         fadeIn ? "opacity-100" : "opacity-0",
-        validBackgroundImage ? "relative" : "bg-gray-100"
+        !validBackgroundImage && "bg-gray-100"
       )}
     >
+      {/* Hero section with background image */}
       {validBackgroundImage && (
-        <>
+        <div className="relative">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[400px]"
             style={{ backgroundImage: `url(${backgroundImage})` }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
-        </>
+          <div className="absolute inset-0 bg-black/70 h-[400px]" aria-hidden="true" />
+        </div>
       )}
       
-      <div className={cn(
-        "relative z-10 w-full min-h-screen",
-        validBackgroundImage ? "text-white" : "text-foreground"
-      )}>
+      <div className="relative z-10 w-full min-h-screen">
         {children}
       </div>
     </div>

@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
@@ -10,12 +9,11 @@ const Events = () => {
   return (
     <Layout>
       <HeroSection
-        backgroundImage="/lovable-uploads/a73250b9-5837-4843-92a3-60996ef464d1.png"
         title="EVENTS"
         subtitle="Follow Us for Future Updates and Events"
       />
 
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
             title="UPCOMING EVENTS" 
@@ -23,7 +21,7 @@ const Events = () => {
             centered={true}
           />
 
-          <div className="max-w-3xl mx-auto text-center my-20 p-8 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200">
+          <div className="max-w-3xl mx-auto text-center my-20 p-8 bg-gray-50 rounded-lg border border-gray-200">
             <div className="flex flex-col items-center justify-center mb-8">
               <CalendarDays className="h-20 w-20 text-em-purple mb-4" />
               <h3 className="text-2xl md:text-3xl font-bold">No Events Currently Scheduled</h3>

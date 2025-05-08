@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
@@ -15,7 +14,6 @@ const Index = () => {
     <Layout>
       {/* Hero Section */}
       <HeroSection
-        backgroundImage="/images/home-hero.jpg"
         title="We exist to end gender-based violence and support recovery from substance abuse."
         quote={{
           text: "It's painful to know I'm not alone.",
@@ -64,7 +62,7 @@ const Index = () => {
       </section>
 
       {/* Programs Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
             title="OUR PROGRAMS" 
@@ -161,7 +159,7 @@ const Index = () => {
       </section>
 
       {/* Impact Stories Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
             title="IMPACT STORIES" 

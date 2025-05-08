@@ -1,10 +1,9 @@
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 interface HeroSectionProps {
-  backgroundImage: string;
+  backgroundImage?: string;
   title: string;
   subtitle?: string;
   quote?: {
@@ -19,71 +18,44 @@ interface HeroSectionProps {
     text: string;
     link: string;
   };
-  overlay?: boolean;
-  className?: string;
 }
 
 const HeroSection = ({
-  backgroundImage,
   title,
   subtitle,
   quote,
   primaryCta,
   secondaryCta,
-  overlay = true,
-  className,
 }: HeroSectionProps) => {
   return (
-    <section 
-      className={cn(
-        "relative min-h-[70vh] flex items-center justify-center bg-cover bg-center",
-        className
-      )}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      {overlay && <div className="hero-overlay" />}
-      
-      <div className="container px-4 sm:px-6 lg:px-8 py-20 hero-content text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">{title}</h1>
-          
-          {subtitle && (
-            <p className="text-xl md:text-2xl mb-8 fade-in-delay-1">{subtitle}</p>
-          )}
-          
-          {quote && (
-            <div className="mb-10 italic fade-in-delay-1">
-              <p className="text-xl">"{quote.text}"</p>
-              <p className="text-lg mt-2">— {quote.author}</p>
-            </div>
-          )}
-          
-          {(primaryCta || secondaryCta) && (
-            <div className="flex flex-wrap gap-4 justify-center mt-8 fade-in-delay-2">
-              {primaryCta && (
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-em-purple hover:bg-em-purple-dark text-white rounded-full px-8"
-                >
-                  <Link to={primaryCta.link}>{primaryCta.text}</Link>
-                </Button>
-              )}
-              
-              {secondaryCta && (
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-em-red hover:bg-em-red-dark text-white rounded-full px-8"
-                >
-                  <Link to={secondaryCta.link}>{secondaryCta.text}</Link>
-                </Button>
-              )}
-            </div>
-          )}
-        </div>
+    <div className="relative z-10 pt-20 pb-16 px-4 sm:pt-24 sm:pb-20 md:pt-32 md:pb-24">
+      <div className="container mx-auto text-center text-white">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">{title}</h1>
+        {subtitle && <p className="text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto">{subtitle}</p>}
+        
+        {quote && (
+          <div className="max-w-2xl mx-auto mb-8 bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6">
+            <p className="text-xl md:text-2xl italic mb-2">"{quote.text}"</p>
+            <p className="text-sm md:text-base">— {quote.author}</p>
+          </div>
+        )}
+        
+        {(primaryCta || secondaryCta) && (
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
+            {primaryCta && (
+              <Button asChild size="lg" className="bg-em-red hover:bg-em-red-dark">
+                <Link to={primaryCta.link}>{primaryCta.text}</Link>
+              </Button>
+            )}
+            {secondaryCta && (
+              <Button asChild size="lg" variant="outline" className="bg-transparent border-2 border-white hover:bg-white/10">
+                <Link to={secondaryCta.link}>{secondaryCta.text}</Link>
+              </Button>
+            )}
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
 };
 
