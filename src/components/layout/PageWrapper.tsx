@@ -42,7 +42,7 @@ const PageWrapper = ({
   const validBackgroundImage = backgroundImage && !bgLoadError;
   
   // Check if it's the donate page to apply special styling
-  const isDonate = backgroundImage?.includes("331e8199-4448-4724-86ec-86fd40e94955");
+  const isDonate = backgroundImage?.includes("b8830c0d-22e0-4580-81ae-a85bcb770c5a");
   
   return (
     <motion.div
@@ -60,7 +60,7 @@ const PageWrapper = ({
           <div 
             className={cn(
               "absolute inset-0 bg-cover bg-center bg-no-repeat h-[650px] md:h-[700px]",
-              isDonate && "bg-contain bg-center bg-white" // Special styling for donate page
+              isDonate && "bg-contain bg-top bg-white" // Special styling for donate page
             )}
             style={{ 
               backgroundImage: `url(${backgroundImage})`,
@@ -70,7 +70,7 @@ const PageWrapper = ({
           />
           <div className={cn(
             "absolute inset-0 h-[650px] md:h-[700px]",
-            isDonate ? "bg-white/10" : "bg-black/65"  // Lighter overlay for donate page
+            isDonate ? "bg-white/5" : "bg-black/65"  // Lighter overlay for donate page
           )} aria-hidden="true" />
         </div>
       )}

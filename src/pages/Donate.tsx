@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
@@ -43,13 +42,13 @@ const Donate = () => {
     <Layout>
       {/* Hero Section */}
       <HeroSection
-        backgroundImage="/lovable-uploads/a83c16cf-cd8e-4974-b4f5-89cf7185846f.png"
         title="DONATE"
         subtitle="Your Support Changes Lives"
+        className="pt-[300px] md:pt-[350px]" // Adjusted padding to move content below the image
       />
 
       {/* Donation Form Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>

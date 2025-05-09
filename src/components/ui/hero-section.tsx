@@ -37,7 +37,7 @@ const HeroSection = ({
   return (
     <div className={cn(
       "relative z-10 flex items-center justify-center min-h-[600px] pt-20 pb-16 px-4 sm:pb-20 md:pb-24",
-      isDonate && "min-h-[500px]", // Shorter hero section for donate page
+      isDonate && "min-h-[400px]", // Shorter hero section for donate page
       className
     )}>
       <div className="container mx-auto text-center text-white">
