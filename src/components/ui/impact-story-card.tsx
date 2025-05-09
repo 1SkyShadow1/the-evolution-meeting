@@ -22,7 +22,11 @@ const ImpactStoryCard = ({
   className,
 }: ImpactStoryCardProps) => {
   return (
-    <div 
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
       className={cn(
         "bg-white rounded-lg shadow-lg overflow-hidden transition-all hover:-translate-y-1 duration-300 border border-gray-100",
         className
@@ -49,7 +53,7 @@ const ImpactStoryCard = ({
           <Link to={link}>Read Full Story</Link>
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

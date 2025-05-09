@@ -3,223 +3,149 @@ import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
 import ImpactStoryCard from "@/components/ui/impact-story-card";
-import { Button } from "@/components/ui/button";
-import { Quote } from "lucide-react";
+import BedfordviewTalk from "@/components/impact/BedfordviewTalk";
+import { motion } from "framer-motion";
 
 const ImpactStories = () => {
-  // Updated impact stories data
-  const featuredStory = {
-    id: 1,
-    title: "March for Substance Abuse and Gender Based Violence",
-    excerpt: "The Evolution Meeting organized a powerful march in collaboration with Rainbow FM to raise awareness about substance abuse and gender-based violence in our community.",
-    content: `
-      <p>On May 5th, 2019, The Evolution Meeting joined forces with Rainbow FM to organize a landmark march against substance abuse and gender-based violence. Community members from all walks of life came together, carrying signs and raising their voices to demand change.</p>
-      
-      <p>The march was a powerful demonstration of community solidarity, drawing attention to the devastating effects of substance abuse and gender-based violence on families and communities. Law enforcement officials joined the march, showing their support for the cause and commitment to addressing these critical issues.</p>
-      
-      <p>This collaborative effort not only raised awareness but also connected those in need with resources and support services. The visibility created by events like this helps reduce stigma and encourages those affected to seek help.</p>
-      
-      <p>The Evolution Meeting continues to organize such community actions, believing in the power of collective voice to drive meaningful change in society.</p>
-    `,
-    image: "/lovable-uploads/0caaa20f-7a55-449c-ab6e-96d3a821619b.png",
-    date: "May 5, 2019",
-    author: "The Evolution Meeting Team"
-  };
-
-  const stories = [
-    {
-      id: 2,
-      title: "Edenglen High School Substance Abuse and GBV Awareness Campaign",
-      excerpt: "Students from Edenglen High School participated in our awareness program, learning about the dangers of substance abuse and how to prevent gender-based violence.",
-      image: "/lovable-uploads/e59516f7-e31c-49a4-bc9d-52b84e4dcf66.png",
-      date: "March 15, 2023",
-      author: "School Outreach Program"
-    },
-    {
-      id: 3,
-      title: "Talk at Bedfordview High School on Substance Abuse",
-      excerpt: "Our speakers addressed students and staff at Bedfordview High School, sharing valuable information about substance abuse prevention and support resources.",
-      image: "/lovable-uploads/f25698a2-bc66-454f-9e74-358070475c22.png",
-      date: "April 22, 2023",
-      author: "Education Outreach Team"
-    },
-    {
-      id: 4,
-      title: "Community Champions: Teenagers Taking a Stand",
-      excerpt: "How our school outreach program inspired a group of teenagers to launch an anti-GBV campaign that reached thousands in their community.",
-      image: "/lovable-uploads/73570143-4523-4347-b986-ae8985cfbdf2.png",
-      date: "February 10, 2023",
-      author: "Youth Advocacy Program"
-    },
-    {
-      id: 5,
-      title: "Finding Voice: A Survivor Becomes an Advocate",
-      excerpt: "After escaping an abusive relationship, Thabo found healing through advocacy, now leading community education workshops.",
-      image: "/lovable-uploads/de82f759-0eba-4204-ad0b-d4cbbd04d57d.png",
-      date: "January 17, 2023",
-      author: "Thabo N."
-    },
-    {
-      id: 6,
-      title: "The Healing Power of Community: Maria's Journey",
-      excerpt: "Isolated by abuse, Maria found connection and healing in our support groups, rebuilding her life one relationship at a time.",
-      image: "/lovable-uploads/5c5a5c2a-9dee-466b-b745-dd0c539a21a0.png",
-      date: "December 05, 2022",
-      author: "Maria L."
-    }
-  ];
-
   return (
     <Layout>
       {/* Hero Section */}
       <HeroSection
+        backgroundImage="/lovable-uploads/29ccc5e1-a424-43e3-a911-d1bd3e986d88.png"
         title="IMPACT STORIES"
-        subtitle="Real Stories of Transformation and Hope"
-        className="mb-0"
+        subtitle="Stories of Transformation and Hope"
       />
 
-      {/* Featured Story Section */}
+      {/* Featured Story */}
       <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
-            title="Featured Story" 
+            title="Featured Story"
             centered={true}
           />
-          <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-5xl mx-auto border border-gray-100">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="h-full">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-gray-50 rounded-lg overflow-hidden shadow-lg max-w-4xl mx-auto"
+          >
+            <div className="md:flex">
+              <div className="md:w-1/2">
                 <img 
-                  src={featuredStory.image} 
-                  alt={featuredStory.title} 
-                  className="w-full h-full object-cover"
+                  src="/lovable-uploads/016a2f5f-6e02-4e2e-b040-0c2296357317.png" 
+                  alt="Evolution Meeting x Rainbow FM" 
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <div className="p-8 lg:p-12">
-                <div className="text-sm text-em-purple font-semibold mb-2">{featuredStory.date}</div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-800">{featuredStory.title}</h3>
-                <div className="bg-em-purple/10 p-6 rounded-lg mb-6 border border-em-purple/20">
-                  <Quote className="h-8 w-8 text-em-purple opacity-60 mb-2" />
-                  <p className="italic text-gray-700">
-                    "Community action is the cornerstone of change. When we come together to address issues like substance abuse and gender-based violence, we create a powerful force for transformation in our society."
-                  </p>
-                  <p className="text-right font-semibold mt-2 text-gray-800">— {featuredStory.author}</p>
+              <div className="p-8 md:w-1/2">
+                <h3 className="text-2xl font-bold mb-4">Evolution Meeting x Rainbow FM</h3>
+                <p className="text-gray-700 mb-4">
+                  Our collaboration with Rainbow FM reached thousands of listeners, bringing awareness to gender-based violence 
+                  and substance abuse issues in our communities. The campaign featured survivor stories, expert interviews, 
+                  and practical advice for those affected.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  This partnership helped us connect with many individuals who were previously unaware of available support 
+                  services, leading to a 40% increase in helpline calls and support group attendance.
+                </p>
+                <div className="text-sm text-gray-500 mt-6">
+                  <p>April 18, 2026</p>
                 </div>
-                <p className="mb-6 text-gray-600">{featuredStory.excerpt}</p>
-                <Button className="bg-em-purple hover:bg-em-purple-dark transition-all duration-300">
-                  Read Full Story
-                </Button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* More Stories Section */}
+      {/* Bedfordview High School Talk Section */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto">
           <SectionHeading 
-            title="More Impact Stories" 
+            title="School Outreach Programs" 
             centered={true}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {stories.map(story => (
-              <ImpactStoryCard
-                key={story.id}
-                title={story.title}
-                excerpt={story.excerpt}
-                image={story.image}
-                date={story.date}
-                link={`/impact-stories/${story.id}`}
-              />
-            ))}
-          </div>
+          <BedfordviewTalk />
         </div>
       </section>
 
-      {/* Submit a Story Section */}
-      <section className="section-padding bg-gradient-to-r from-em-purple to-em-purple-dark text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Share Your Story</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-8">
-            Has The Evolution Meeting made a difference in your life? We invite you to share your story 
-            of recovery, healing, or transformation. Your experiences can inspire others and show the 
-            real impact of our work.
-          </p>
-          <Button asChild className="bg-white text-em-purple hover:bg-gray-100 shadow-lg">
-            <a href="/contact">Submit Your Story</a>
-          </Button>
-        </div>
-      </section>
-
-      {/* Testimonials Grid */}
+      {/* More Impact Stories */}
       <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
-            title="Voices of Change" 
-            subtitle="Short Testimonials from Our Community"
+            title="More Stories of Impact" 
             centered={true}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-em-purple/30 hover:shadow-lg transition-all duration-300">
-              <Quote className="h-6 w-6 text-em-red opacity-60 mb-2" />
-              <p className="italic mb-4 text-gray-700">
-                "The substance abuse program gave me tools to maintain my sobriety that I use every day. Two years clean and counting."
-              </p>
-              <p className="font-semibold text-gray-800">— David T.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-em-purple/30 hover:shadow-lg transition-all duration-300">
-              <Quote className="h-6 w-6 text-em-red opacity-60 mb-2" />
-              <p className="italic mb-4 text-gray-700">
-                "As a volunteer, I've seen how education changes attitudes about GBV in our community. It's making a real difference."
-              </p>
-              <p className="font-semibold text-gray-800">— Lerato M.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-em-purple/30 hover:shadow-lg transition-all duration-300">
-              <Quote className="h-6 w-6 text-em-red opacity-60 mb-2" />
-              <p className="italic mb-4 text-gray-700">
-                "The helpline counselor talked me through a crisis and helped me find safety. I'll never forget that night."
-              </p>
-              <p className="font-semibold text-gray-800">— Anonymous Caller</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-em-purple/30 hover:shadow-lg transition-all duration-300">
-              <Quote className="h-6 w-6 text-em-red opacity-60 mb-2" />
-              <p className="italic mb-4 text-gray-700">
-                "My daughter found hope here after addiction nearly took her life. The family counseling helped us heal together."
-              </p>
-              <p className="font-semibold text-gray-800">— Parent of Recovery Client</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-em-purple/30 hover:shadow-lg transition-all duration-300">
-              <Quote className="h-6 w-6 text-em-red opacity-60 mb-2" />
-              <p className="italic mb-4 text-gray-700">
-                "The March for Justice showed me I wasn't alone in fighting for change. It was empowering to find my community."
-              </p>
-              <p className="font-semibold text-gray-800">— Event Participant</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-em-purple/30 hover:shadow-lg transition-all duration-300">
-              <Quote className="h-6 w-6 text-em-red opacity-60 mb-2" />
-              <p className="italic mb-4 text-gray-700">
-                "I never thought I could leave. The legal advocates helped me navigate the system and start fresh with my children."
-              </p>
-              <p className="font-semibold text-gray-800">— GBV Survivor</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ImpactStoryCard
+              title="March for Substance Abuse and Gender Based Violence"
+              excerpt="Our community came together in solidarity to raise awareness and demand action against substance abuse and gender-based violence affecting our society."
+              image="/images/impact-story1.jpg"
+              date="May 12, 2026"
+              link="#"
+            />
+            <ImpactStoryCard
+              title="Edenglen Highschool Awareness Campaign"
+              excerpt="Students from Edenglen High School participated in our substance abuse and gender-based violence awareness program, learning how to recognize and prevent these issues."
+              image="/images/impact-story3.jpg"
+              date="March 15, 2026"
+              link="#"
+            />
+            <ImpactStoryCard
+              title="Community Workshop Series"
+              excerpt="Our six-week workshop series equipped community leaders with tools to address substance abuse and gender-based violence in their neighborhoods."
+              image="/lovable-uploads/371ad64a-1e5b-4f39-b9f1-0a41c6263d0d.png"
+              date="February 28, 2026"
+              link="#"
+            />
+            <ImpactStoryCard
+              title="Youth Development Program"
+              excerpt="Twenty young people completed our leadership program and are now peer educators in their schools, promoting healthy relationships and substance-free living."
+              image="/lovable-uploads/a73250b9-5837-4843-92a3-60996ef464d1.png"
+              date="January 25, 2026"
+              link="#"
+            />
+            <ImpactStoryCard
+              title="Corporate Partnership Initiative"
+              excerpt="Our new partnership with five local businesses is creating employment opportunities for survivors of gender-based violence and individuals in recovery."
+              image="/lovable-uploads/a83c16cf-cd8e-4974-b4f5-89cf7185846f.png"
+              date="December 10, 2025"
+              link="#"
+            />
+            <ImpactStoryCard
+              title="Rural Outreach Success"
+              excerpt="Our mobile counseling services have reached five previously underserved rural communities, providing support to over 150 individuals in need."
+              image="/lovable-uploads/6a159869-62ad-4372-a1fa-5dd9a9a1871b.png"
+              date="November 5, 2025"
+              link="#"
+            />
           </div>
         </div>
       </section>
 
-      {/* Support Call to Action */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">Help Us Create More Success Stories</h2>
-          <p className="text-xl max-w-2xl mx-auto mb-10 text-gray-600">
-            Your support makes these transformations possible. Together, we can help more individuals heal and build lives free from violence and addiction.
+      {/* Call to Action */}
+      <section className="section-padding bg-em-purple text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Help Us Create More Success Stories</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Your support makes our work possible. Join us in creating more stories of hope, healing, and transformation.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild className="bg-em-red hover:bg-em-red-dark shadow-lg transition-all duration-300">
-              <a href="/donate">Donate Today</a>
-            </Button>
-            <Button asChild variant="outline" className="border-em-purple text-em-purple hover:bg-em-purple hover:text-white transition-all duration-300">
-              <a href="/volunteer">Become a Volunteer</a>
-            </Button>
+            <motion.a 
+              href="/donate" 
+              className="bg-white text-em-purple px-8 py-3 rounded-md font-bold hover:bg-gray-100 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              Donate Today
+            </motion.a>
+            <motion.a 
+              href="/volunteer" 
+              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white/10 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              Volunteer With Us
+            </motion.a>
           </div>
         </div>
       </section>

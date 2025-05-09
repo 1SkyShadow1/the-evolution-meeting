@@ -4,13 +4,15 @@ import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { HeartHandshake, CheckCircle, DollarSign, Gift } from "lucide-react";
+import { HeartHandshake, CheckCircle, DollarSign, Gift, CreditCard, Wallet } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Donate = () => {
   const [donationAmount, setDonationAmount] = useState<number | null>(null);
   const [customAmount, setCustomAmount] = useState<string>("");
   const [donationType, setDonationType] = useState<"one-time" | "monthly">("one-time");
+  const [paymentMethod, setPaymentMethod] = useState<"card" | "paypal" | "eft">("card");
 
   const handleAmountSelect = (amount: number) => {
     setDonationAmount(amount);
@@ -26,7 +28,7 @@ const Donate = () => {
     <Layout>
       {/* Hero Section */}
       <HeroSection
-        backgroundImage="/images/donate-bg.jpg"
+        backgroundImage="/lovable-uploads/a83c16cf-cd8e-4974-b4f5-89cf7185846f.png"
         title="DONATE"
         subtitle="Your Support Changes Lives"
       />
@@ -93,7 +95,12 @@ const Donate = () => {
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <motion.div 
+              className="bg-white p-8 rounded-lg shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <h3 className="text-2xl font-bold mb-6 text-center">Secure Donation Form</h3>
               
               {/* Donation Type Selection */}
@@ -173,6 +180,37 @@ const Donate = () => {
                   />
                 </div>
               </div>
+
+              {/* Payment Method Selection */}
+              <div className="mb-6">
+                <p className="text-sm text-gray-600 mb-2">Select payment method:</p>
+                <div className="grid grid-cols-3 gap-3">
+                  <Button 
+                    variant={paymentMethod === "card" ? "default" : "outline"}
+                    className={paymentMethod === "card" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                    onClick={() => setPaymentMethod("card")}
+                  >
+                    <CreditCard className="mr-2 h-4 w-4" />
+                    Card
+                  </Button>
+                  <Button 
+                    variant={paymentMethod === "paypal" ? "default" : "outline"}
+                    className={paymentMethod === "paypal" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                    onClick={() => setPaymentMethod("paypal")}
+                  >
+                    <Wallet className="mr-2 h-4 w-4" />
+                    PayPal
+                  </Button>
+                  <Button 
+                    variant={paymentMethod === "eft" ? "default" : "outline"}
+                    className={paymentMethod === "eft" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                    onClick={() => setPaymentMethod("eft")}
+                  >
+                    <DollarSign className="mr-2 h-4 w-4" />
+                    EFT
+                  </Button>
+                </div>
+              </div>
               
               {/* Personal Information */}
               <div className="space-y-4 mb-6">
@@ -206,7 +244,7 @@ const Donate = () => {
                   Your donation is secure and encrypted. You will receive a receipt via email.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -265,8 +303,33 @@ const Donate = () => {
         </div>
       </section>
 
+      {/* PayPal Section */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto">
+          <SectionHeading 
+            title="Donate via PayPal" 
+            centered={true}
+          />
+          <div className="max-w-xl mx-auto text-center">
+            <p className="mb-6">
+              You can also donate instantly and securely using PayPal. Click the button below to proceed.
+            </p>
+            <div className="bg-blue-50 p-8 rounded-lg shadow-md inline-block">
+              <img 
+                src="https://placehold.co/200x80/png?text=PayPal+Logo" 
+                alt="PayPal" 
+                className="h-16 mx-auto mb-6"
+              />
+              <Button className="bg-blue-500 hover:bg-blue-600 text-lg py-4 px-8">
+                Donate with PayPal
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Impact Stories Teaser */}
-      <section className="section-padding">
+      <section className="section-padding bg-gray-50">
         <div className="container mx-auto text-center">
           <SectionHeading 
             title="The Impact of Your Giving" 

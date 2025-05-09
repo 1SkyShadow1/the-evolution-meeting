@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface HeroSectionProps {
   backgroundImage?: string;
@@ -36,18 +37,45 @@ const HeroSection = ({
       className
     )}>
       <div className="container mx-auto text-center text-white">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-shadow-lg animate-fade-in">{title}</h1>
-        {subtitle && <p className="text-xl md:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto text-shadow-md fade-in-delay-1">{subtitle}</p>}
+        <motion.h1 
+          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          {title}
+        </motion.h1>
+        
+        {subtitle && (
+          <motion.p 
+            className="text-xl md:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto text-shadow-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            {subtitle}
+          </motion.p>
+        )}
         
         {quote && (
-          <div className="max-w-2xl mx-auto mb-8 bg-white/20 backdrop-blur-sm rounded-lg p-4 md:p-6 fade-in-delay-2 border border-white/30 shadow-xl">
+          <motion.div 
+            className="max-w-2xl mx-auto mb-8 bg-white/20 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-white/30 shadow-xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <p className="text-xl md:text-2xl italic mb-2">"{quote.text}"</p>
             <p className="text-sm md:text-base font-semibold">— {quote.author}</p>
-          </div>
+          </motion.div>
         )}
         
         {(primaryCta || secondaryCta) && (
-          <div className="flex flex-wrap justify-center gap-4 mt-6 fade-in-delay-2">
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4 mt-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             {primaryCta && (
               <Button asChild size="lg" className="bg-em-red hover:bg-em-red-dark transition-all duration-300 shadow-lg text-lg">
                 <Link to={primaryCta.link}>{primaryCta.text}</Link>
@@ -58,7 +86,7 @@ const HeroSection = ({
                 <Link to={secondaryCta.link}>{secondaryCta.text}</Link>
               </Button>
             )}
-          </div>
+          </motion.div>
         )}
       </div>
     </div>

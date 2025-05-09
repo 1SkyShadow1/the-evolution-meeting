@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface PageWrapperProps {
   backgroundImage?: string;
@@ -41,10 +42,12 @@ const PageWrapper = ({
   const validBackgroundImage = backgroundImage && !bgLoadError;
   
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
       className={cn(
-        "min-h-screen w-full transition-opacity duration-500",
-        fadeIn ? "opacity-100" : "opacity-0",
+        "min-h-screen w-full",
         !validBackgroundImage && "bg-gray-100"
       )}
     >
@@ -66,7 +69,7 @@ const PageWrapper = ({
       <div className="relative z-10 w-full min-h-screen">
         {children}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
