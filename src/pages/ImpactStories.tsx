@@ -35,6 +35,10 @@ const ImpactStories = () => {
                   src="/lovable-uploads/016a2f5f-6e02-4e2e-b040-0c2296357317.png" 
                   alt="Evolution Meeting x Rainbow FM" 
                   className="h-full w-full object-cover"
+                  onError={(e) => {
+                    console.error("Failed to load image:", "/lovable-uploads/016a2f5f-6e02-4e2e-b040-0c2296357317.png");
+                    e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+                  }}
                 />
               </div>
               <div className="p-8 md:w-1/2">
@@ -49,7 +53,7 @@ const ImpactStories = () => {
                   services, leading to a 40% increase in helpline calls and support group attendance.
                 </p>
                 <div className="text-sm text-gray-500 mt-6">
-                  <p>April 18, 2026</p>
+                  <p>April 18, 2020</p>
                 </div>
               </div>
             </div>
@@ -80,42 +84,42 @@ const ImpactStories = () => {
               title="March for Substance Abuse and Gender Based Violence"
               excerpt="Our community came together in solidarity to raise awareness and demand action against substance abuse and gender-based violence affecting our society."
               image="/images/impact-story1.jpg"
-              date="May 12, 2026"
+              date="May 12, 2019"
               link="#"
             />
             <ImpactStoryCard
               title="Edenglen Highschool Awareness Campaign"
               excerpt="Students from Edenglen High School participated in our substance abuse and gender-based violence awareness program, learning how to recognize and prevent these issues."
               image="/images/impact-story3.jpg"
-              date="March 15, 2026"
+              date="March 15, 2018"
               link="#"
             />
             <ImpactStoryCard
               title="Community Workshop Series"
               excerpt="Our six-week workshop series equipped community leaders with tools to address substance abuse and gender-based violence in their neighborhoods."
               image="/lovable-uploads/371ad64a-1e5b-4f39-b9f1-0a41c6263d0d.png"
-              date="February 28, 2026"
+              date="February 28, 2017"
               link="#"
             />
             <ImpactStoryCard
               title="Youth Development Program"
               excerpt="Twenty young people completed our leadership program and are now peer educators in their schools, promoting healthy relationships and substance-free living."
               image="/lovable-uploads/a73250b9-5837-4843-92a3-60996ef464d1.png"
-              date="January 25, 2026"
+              date="January 25, 2016"
               link="#"
             />
             <ImpactStoryCard
               title="Corporate Partnership Initiative"
               excerpt="Our new partnership with five local businesses is creating employment opportunities for survivors of gender-based violence and individuals in recovery."
               image="/lovable-uploads/a83c16cf-cd8e-4974-b4f5-89cf7185846f.png"
-              date="December 10, 2025"
+              date="December 10, 2016"
               link="#"
             />
             <ImpactStoryCard
               title="Rural Outreach Success"
               excerpt="Our mobile counseling services have reached five previously underserved rural communities, providing support to over 150 individuals in need."
               image="/lovable-uploads/6a159869-62ad-4372-a1fa-5dd9a9a1871b.png"
-              date="November 5, 2025"
+              date="November 5, 2017"
               link="#"
             />
           </div>

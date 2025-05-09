@@ -4,15 +4,19 @@ import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { HeartHandshake, CheckCircle, DollarSign, Gift, CreditCard, Wallet } from "lucide-react";
+import { HeartHandshake, CheckCircle, DollarSign, Gift, CreditCard, Wallet, Calendar, CreditCard as CardIcon, Lock } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Form, FormField, FormItem, FormLabel, FormControl } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
 
 const Donate = () => {
   const [donationAmount, setDonationAmount] = useState<number | null>(null);
   const [customAmount, setCustomAmount] = useState<string>("");
   const [donationType, setDonationType] = useState<"one-time" | "monthly">("one-time");
   const [paymentMethod, setPaymentMethod] = useState<"card" | "paypal" | "eft">("card");
+  const [showCardFields, setShowCardFields] = useState(false);
+  const form = useForm();
 
   const handleAmountSelect = (amount: number) => {
     setDonationAmount(amount);
@@ -22,6 +26,17 @@ const Donate = () => {
   const handleCustomAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCustomAmount(e.target.value);
     setDonationAmount(null);
+  };
+
+  const handlePaymentMethodChange = (method: "card" | "paypal" | "eft") => {
+    setPaymentMethod(method);
+    setShowCardFields(method === "card");
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Process donation - in a real app this would connect to a payment processor
+    alert("Thank you for your donation! This is a demo, so no actual payment will be processed.");
   };
 
   return (
@@ -88,6 +103,13 @@ const Donate = () => {
                     </div>
                   </div>
                 </div>
+                <div className="mt-6">
+                  <img 
+                    src="/lovable-uploads/136d1178-dd74-408a-9889-e094c981a5e4.png" 
+                    alt="Donation box" 
+                    className="w-full rounded-lg shadow-md" 
+                  />
+                </div>
               </div>
               
               <div className="text-sm text-gray-600">
@@ -103,147 +125,207 @@ const Donate = () => {
             >
               <h3 className="text-2xl font-bold mb-6 text-center">Secure Donation Form</h3>
               
-              {/* Donation Type Selection */}
-              <div className="mb-6">
-                <p className="text-sm text-gray-600 mb-2">Select donation type:</p>
-                <div className="grid grid-cols-2 gap-4">
-                  <Button 
-                    variant={donationType === "one-time" ? "default" : "outline"}
-                    className={donationType === "one-time" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => setDonationType("one-time")}
-                  >
-                    One-time
-                  </Button>
-                  <Button 
-                    variant={donationType === "monthly" ? "default" : "outline"}
-                    className={donationType === "monthly" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => setDonationType("monthly")}
-                  >
-                    Monthly
-                  </Button>
+              <form onSubmit={handleSubmit}>
+                {/* Donation Type Selection */}
+                <div className="mb-6">
+                  <p className="text-sm text-gray-600 mb-2">Select donation type:</p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <Button 
+                      type="button"
+                      variant={donationType === "one-time" ? "default" : "outline"}
+                      className={donationType === "one-time" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => setDonationType("one-time")}
+                    >
+                      One-time
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant={donationType === "monthly" ? "default" : "outline"}
+                      className={donationType === "monthly" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => setDonationType("monthly")}
+                    >
+                      Monthly
+                    </Button>
+                  </div>
                 </div>
-              </div>
-              
-              {/* Amount Selection */}
-              <div className="mb-6">
-                <p className="text-sm text-gray-600 mb-2">Select amount (ZAR):</p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
-                  <Button 
-                    variant={donationAmount === 50 ? "default" : "outline"}
-                    className={donationAmount === 50 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => handleAmountSelect(50)}
-                  >
-                    R 50
-                  </Button>
-                  <Button 
-                    variant={donationAmount === 100 ? "default" : "outline"}
-                    className={donationAmount === 100 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => handleAmountSelect(100)}
-                  >
-                    R 100
-                  </Button>
-                  <Button 
-                    variant={donationAmount === 250 ? "default" : "outline"}
-                    className={donationAmount === 250 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => handleAmountSelect(250)}
-                  >
-                    R 250
-                  </Button>
-                  <Button 
-                    variant={donationAmount === 500 ? "default" : "outline"}
-                    className={donationAmount === 500 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => handleAmountSelect(500)}
-                  >
-                    R 500
-                  </Button>
-                  <Button 
-                    variant={donationAmount === 1000 ? "default" : "outline"}
-                    className={donationAmount === 1000 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => handleAmountSelect(1000)}
-                  >
-                    R 1,000
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className={customAmount ? "bg-em-purple text-white hover:bg-em-purple-dark" : ""}
-                  >
-                    Other
-                  </Button>
+                
+                {/* Amount Selection */}
+                <div className="mb-6">
+                  <p className="text-sm text-gray-600 mb-2">Select amount (ZAR):</p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
+                    <Button 
+                      type="button"
+                      variant={donationAmount === 50 ? "default" : "outline"}
+                      className={donationAmount === 50 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => handleAmountSelect(50)}
+                    >
+                      R 50
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant={donationAmount === 100 ? "default" : "outline"}
+                      className={donationAmount === 100 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => handleAmountSelect(100)}
+                    >
+                      R 100
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant={donationAmount === 250 ? "default" : "outline"}
+                      className={donationAmount === 250 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => handleAmountSelect(250)}
+                    >
+                      R 250
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant={donationAmount === 500 ? "default" : "outline"}
+                      className={donationAmount === 500 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => handleAmountSelect(500)}
+                    >
+                      R 500
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant={donationAmount === 1000 ? "default" : "outline"}
+                      className={donationAmount === 1000 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => handleAmountSelect(1000)}
+                    >
+                      R 1,000
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant="outline"
+                      className={customAmount ? "bg-em-purple text-white hover:bg-em-purple-dark" : ""}
+                    >
+                      Other
+                    </Button>
+                  </div>
+                  <div className="mt-3">
+                    <Input
+                      type="number"
+                      placeholder="Custom amount"
+                      value={customAmount}
+                      onChange={handleCustomAmountChange}
+                      className="w-full"
+                    />
+                  </div>
                 </div>
-                <div className="mt-3">
-                  <Input
-                    type="number"
-                    placeholder="Custom amount"
-                    value={customAmount}
-                    onChange={handleCustomAmountChange}
-                    className="w-full"
-                  />
-                </div>
-              </div>
 
-              {/* Payment Method Selection */}
-              <div className="mb-6">
-                <p className="text-sm text-gray-600 mb-2">Select payment method:</p>
-                <div className="grid grid-cols-3 gap-3">
-                  <Button 
-                    variant={paymentMethod === "card" ? "default" : "outline"}
-                    className={paymentMethod === "card" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => setPaymentMethod("card")}
-                  >
-                    <CreditCard className="mr-2 h-4 w-4" />
-                    Card
-                  </Button>
-                  <Button 
-                    variant={paymentMethod === "paypal" ? "default" : "outline"}
-                    className={paymentMethod === "paypal" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => setPaymentMethod("paypal")}
-                  >
-                    <Wallet className="mr-2 h-4 w-4" />
-                    PayPal
-                  </Button>
-                  <Button 
-                    variant={paymentMethod === "eft" ? "default" : "outline"}
-                    className={paymentMethod === "eft" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
-                    onClick={() => setPaymentMethod("eft")}
-                  >
-                    <DollarSign className="mr-2 h-4 w-4" />
-                    EFT
-                  </Button>
-                </div>
-              </div>
-              
-              {/* Personal Information */}
-              <div className="space-y-4 mb-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">First Name*</label>
-                    <Input required />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">Last Name*</label>
-                    <Input required />
+                {/* Payment Method Selection */}
+                <div className="mb-6">
+                  <p className="text-sm text-gray-600 mb-2">Select payment method:</p>
+                  <div className="grid grid-cols-3 gap-3">
+                    <Button 
+                      type="button"
+                      variant={paymentMethod === "card" ? "default" : "outline"}
+                      className={paymentMethod === "card" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => handlePaymentMethodChange("card")}
+                    >
+                      <CreditCard className="mr-2 h-4 w-4" />
+                      Card
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant={paymentMethod === "paypal" ? "default" : "outline"}
+                      className={paymentMethod === "paypal" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => handlePaymentMethodChange("paypal")}
+                    >
+                      <Wallet className="mr-2 h-4 w-4" />
+                      PayPal
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant={paymentMethod === "eft" ? "default" : "outline"}
+                      className={paymentMethod === "eft" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                      onClick={() => handlePaymentMethodChange("eft")}
+                    >
+                      <DollarSign className="mr-2 h-4 w-4" />
+                      EFT
+                    </Button>
                   </div>
                 </div>
-                <div>
-                  <label className="block text-sm text-gray-600 mb-1">Email Address*</label>
-                  <Input type="email" required />
+                
+                {/* Personal Information */}
+                <div className="space-y-4 mb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm text-gray-600 mb-1">First Name*</label>
+                      <Input required />
+                    </div>
+                    <div>
+                      <label className="block text-sm text-gray-600 mb-1">Last Name*</label>
+                      <Input required />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-600 mb-1">Email Address*</label>
+                    <Input type="email" required />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-600 mb-1">Phone Number</label>
+                    <Input type="tel" />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm text-gray-600 mb-1">Phone Number</label>
-                  <Input type="tel" />
+
+                {/* Credit Card Details - Only show when card is selected */}
+                {paymentMethod === "card" && (
+                  <div className="space-y-4 mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h4 className="font-semibold flex items-center">
+                      <Lock className="h-4 w-4 mr-2 text-em-purple" />
+                      Secure Card Payment
+                    </h4>
+                    <div>
+                      <label className="block text-sm text-gray-600 mb-1">Card Number*</label>
+                      <div className="relative">
+                        <Input placeholder="1234 5678 9012 3456" required maxLength={19} />
+                        <CardIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm text-gray-600 mb-1">Expiry Date*</label>
+                        <div className="relative">
+                          <Input placeholder="MM/YY" required maxLength={5} />
+                          <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-sm text-gray-600 mb-1">CVV*</label>
+                        <Input placeholder="123" required maxLength={4} />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm text-gray-600 mb-1">Name on Card*</label>
+                      <Input required />
+                    </div>
+                  </div>
+                )}
+
+                {/* PayPal Section */}
+                {paymentMethod === "paypal" && (
+                  <div className="my-6 p-4 bg-blue-50 rounded-lg text-center">
+                    <p className="mb-3">You will be redirected to PayPal to complete your donation after clicking "Complete Donation".</p>
+                    <img 
+                      src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" 
+                      alt="PayPal" 
+                      className="h-10 mx-auto"
+                    />
+                  </div>
+                )}
+                
+                {/* Actions */}
+                <div className="mt-8">
+                  <Button type="submit" className="w-full bg-em-red hover:bg-em-red-dark text-lg py-6">
+                    <HeartHandshake className="mr-2 h-5 w-5" />
+                    Complete Donation
+                  </Button>
+                  <p className="text-center text-sm text-gray-500 mt-4 flex items-center justify-center">
+                    <Lock className="h-4 w-4 mr-1" />
+                    Your donation is secure and encrypted. You will receive a receipt via email.
+                  </p>
                 </div>
-              </div>
-              
-              {/* Actions */}
-              <div className="mt-8">
-                <Button className="w-full bg-em-red hover:bg-em-red-dark text-lg py-6">
-                  <HeartHandshake className="mr-2 h-5 w-5" />
-                  Complete Donation
-                </Button>
-                <p className="text-center text-sm text-gray-500 mt-4">
-                  Your donation is secure and encrypted. You will receive a receipt via email.
-                </p>
-              </div>
+              </form>
             </motion.div>
           </div>
         </div>
@@ -303,7 +385,7 @@ const Donate = () => {
         </div>
       </section>
 
-      {/* PayPal Section */}
+      {/* PayPal Section - Enhanced */}
       <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
@@ -314,15 +396,19 @@ const Donate = () => {
             <p className="mb-6">
               You can also donate instantly and securely using PayPal. Click the button below to proceed.
             </p>
-            <div className="bg-blue-50 p-8 rounded-lg shadow-md inline-block">
+            <div className="bg-blue-50 p-8 rounded-lg shadow-md">
               <img 
-                src="https://placehold.co/200x80/png?text=PayPal+Logo" 
+                src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" 
                 alt="PayPal" 
                 className="h-16 mx-auto mb-6"
               />
-              <Button className="bg-blue-500 hover:bg-blue-600 text-lg py-4 px-8">
+              <p className="mb-4">PayPal allows you to donate securely using your credit card, debit card, or PayPal balance.</p>
+              <Button className="bg-blue-500 hover:bg-blue-600 text-lg py-4 px-8 mb-4">
                 Donate with PayPal
               </Button>
+              <p className="text-sm text-gray-500 mt-2">
+                PayPal accepts Visa, Mastercard, American Express, and Discover.
+              </p>
             </div>
           </div>
         </div>

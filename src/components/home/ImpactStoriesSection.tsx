@@ -18,21 +18,21 @@ const ImpactStoriesSection = () => {
             title="March for Substance Abuse and Gender Based Violence"
             excerpt="Our community came together in solidarity to raise awareness and demand action against substance abuse and gender-based violence that affects our society."
             image="/images/impact-story1.jpg"
-            date="May 12, 2026"
+            date="May 12, 2019"
             link="/impact-stories"
           />
           <ImpactStoryCard
             title="Evolution Meeting x Rainbow FM Collaboration"
             excerpt="We partnered with Rainbow FM for a special awareness event that reached thousands of listeners, spreading our message of hope and recovery."
             image="/lovable-uploads/016a2f5f-6e02-4e2e-b040-0c2296357317.png"
-            date="April 28, 2026"
+            date="April 28, 2020"
             link="/impact-stories"
           />
           <ImpactStoryCard
             title="Edenglen High School Awareness Campaign"
             excerpt="Students from Edenglen High School participated in our substance abuse and gender-based violence awareness program, learning how to recognize and prevent these issues."
             image="/images/impact-story3.jpg"
-            date="April 05, 2026"
+            date="April 05, 2018"
             link="/impact-stories"
           />
         </div>

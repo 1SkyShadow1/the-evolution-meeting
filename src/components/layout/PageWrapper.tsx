@@ -55,14 +55,14 @@ const PageWrapper = ({
       {validBackgroundImage && (
         <div className="relative">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[600px]"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[650px] md:h-[700px]"
             style={{ 
               backgroundImage: `url(${backgroundImage})`,
               backgroundAttachment: "fixed" 
             }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-black/65 h-[600px]" aria-hidden="true" />
+          <div className="absolute inset-0 bg-black/65 h-[650px] md:h-[700px]" aria-hidden="true" />
         </div>
       )}
       

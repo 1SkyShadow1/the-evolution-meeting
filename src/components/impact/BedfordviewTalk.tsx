@@ -16,12 +16,16 @@ const BedfordviewTalk = () => {
             src="/images/impact-story2.jpg" 
             alt="Bedfordview High School Talk" 
             className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error("Failed to load image:", "/images/impact-story2.jpg");
+              e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+            }}
           />
         </div>
         <div className="md:w-1/2 p-8">
           <h3 className="text-2xl font-bold mb-4">Talk at Bedfordview Highschool</h3>
           <p className="text-gray-600 mb-4">
-            Our team conducted an impactful presentation at Bedfordview High School, addressing the critical issues
+            Our team conducted an impactful presentation at Bedfordview High School in 2019, addressing the critical issues
             of substance abuse and gender-based violence affecting young people in our communities.
           </p>
           <p className="text-gray-600 mb-4">

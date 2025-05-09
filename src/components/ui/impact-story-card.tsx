@@ -37,6 +37,10 @@ const ImpactStoryCard = ({
           src={image} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          onError={(e) => {
+            console.error("Failed to load image:", image);
+            e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+          }}
         />
         <div className="absolute top-4 right-4 bg-em-purple text-white py-1 px-3 text-xs rounded-full font-medium">
           {date}

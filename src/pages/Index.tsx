@@ -59,7 +59,7 @@ const Index = () => {
               <div className="relative">
                 <div className="bg-em-purple absolute top-0 left-0 w-72 h-72 rounded-full opacity-20 -z-10 -translate-x-10 -translate-y-10"></div>
                 <img 
-                  src="/images/about-hero.jpg" 
+                  src="/lovable-uploads/371ad64a-1e5b-4f39-b9f1-0a41c6263d0d.png" 
                   alt="About The Evolution Meeting" 
                   className="rounded-lg shadow-xl max-w-full object-cover max-h-96"
                 />
@@ -141,7 +141,7 @@ const Index = () => {
             >
               <EventCard
                 title="March for Justice #JusticeForCwecwe"
-                date="June 2, 2026"
+                date="June 2, 2022"
                 time="10:00 AM - 2:00 PM"
                 location="Edenvale Community Center"
                 image="/lovable-uploads/016a2f5f-6e02-4e2e-b040-0c2296357317.png"
@@ -156,10 +156,10 @@ const Index = () => {
             >
               <EventCard
                 title="Substance Abuse Awareness Workshop"
-                date="July 15, 2026"
+                date="July 15, 2022"
                 time="2:00 PM - 5:00 PM"
                 location="Edenvale Library Hall"
-                image="/images/substance-abuse.jpg"
+                image="/images/impact-story3.jpg"
                 link="/events"
               />
             </motion.div>

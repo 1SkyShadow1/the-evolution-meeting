@@ -71,7 +71,7 @@ const HeroSection = ({
         
         {(primaryCta || secondaryCta) && (
           <motion.div 
-            className="flex flex-wrap justify-center gap-4 mt-6"
+            className="flex flex-wrap justify-center gap-4 mt-6 mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
