@@ -39,15 +39,15 @@ const ImpactStoryCard = ({
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           onError={(e) => {
             console.error("Failed to load image:", image);
-            e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+            e.currentTarget.src = "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200";
           }}
         />
-        <div className="absolute top-4 right-4 bg-em-purple text-white py-1 px-3 text-xs rounded-full font-medium">
+        <div className="absolute top-4 right-4 bg-em-purple text-white py-1 px-3 text-xs rounded-full font-medium shadow-md">
           {date}
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-3 line-clamp-2 text-gray-800 group-hover:text-em-purple">{title}</h3>
+        <h3 className="text-xl font-bold mb-3 line-clamp-2 text-gray-800 hover:text-em-purple transition-colors duration-300">{title}</h3>
         <p className="text-gray-600 mb-6 line-clamp-3">{excerpt}</p>
         <Button 
           asChild

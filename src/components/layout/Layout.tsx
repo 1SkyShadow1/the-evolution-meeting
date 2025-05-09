@@ -14,7 +14,7 @@ const backgroundImages: Record<string, string> = {
   "/": "/lovable-uploads/f9d6ab5f-52f7-443c-997d-cf526e8b4dc1.png", 
   "/about": "/lovable-uploads/371ad64a-1e5b-4f39-b9f1-0a41c6263d0d.png",
   "/programs": "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-  "/donate": "/lovable-uploads/a83c16cf-cd8e-4974-b4f5-89cf7185846f.png",
+  "/donate": "/lovable-uploads/331e8199-4448-4724-86ec-86fd40e94955.png", // Updated donate background image
   "/contact": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
   "/impact-stories": "/lovable-uploads/29ccc5e1-a424-43e3-a911-d1bd3e986d88.png",
   "/volunteer": "/lovable-uploads/6a159869-62ad-4372-a1fa-5dd9a9a1871b.png", 

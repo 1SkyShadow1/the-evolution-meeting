@@ -18,7 +18,7 @@ const BedfordviewTalk = () => {
             className="w-full h-full object-cover"
             onError={(e) => {
               console.error("Failed to load image:", "/images/impact-story2.jpg");
-              e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+              e.currentTarget.src = "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200";
             }}
           />
         </div>

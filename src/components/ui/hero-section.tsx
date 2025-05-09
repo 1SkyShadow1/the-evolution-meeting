@@ -31,14 +31,21 @@ const HeroSection = ({
   secondaryCta,
   className,
 }: HeroSectionProps) => {
+  // Check if it's the donate page to apply custom styling
+  const isDonate = title.toLowerCase() === "donate";
+
   return (
     <div className={cn(
       "relative z-10 flex items-center justify-center min-h-[600px] pt-20 pb-16 px-4 sm:pb-20 md:pb-24",
+      isDonate && "min-h-[500px]", // Shorter hero section for donate page
       className
     )}>
       <div className="container mx-auto text-center text-white">
         <motion.h1 
-          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-shadow-lg"
+          className={cn(
+            "text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-shadow-lg",
+            isDonate && "text-em-red" // Red text for donate page
+          )}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -48,7 +55,10 @@ const HeroSection = ({
         
         {subtitle && (
           <motion.p 
-            className="text-xl md:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto text-shadow-md"
+            className={cn(
+              "text-xl md:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto text-shadow-md",
+              isDonate && "text-gray-800" // Dark text for donate page
+            )}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
