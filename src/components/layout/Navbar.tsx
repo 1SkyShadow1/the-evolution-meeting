@@ -4,11 +4,13 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -42,20 +44,20 @@ const Navbar = () => {
       "text-white sticky top-0 z-50 transition-all duration-300"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between h-16 md:h-20 items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/7bb3a010-7684-44a5-9829-b69a484e6b17.png" 
                 alt="The Evolution Meeting" 
-                className="h-14 w-auto fade-in" 
+                className="h-10 md:h-14 w-auto fade-in" 
               />
-              <span className="ml-3 text-xl font-semibold hidden md:block">The Evolution Meeting</span>
+              <span className="ml-2 md:ml-3 text-lg md:text-xl font-semibold hidden md:block">The Evolution Meeting</span>
             </Link>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <Link to="/" className="text-white hover:text-gray-200 transition-colors font-medium">Home</Link>
             <Link to="/about" className="text-white hover:text-gray-200 transition-colors font-medium">About</Link>
             <Link to="/programs" className="text-white hover:text-gray-200 transition-colors font-medium">Programs</Link>
@@ -84,7 +86,7 @@ const Navbar = () => {
       {/* Mobile Navigation - Slide down animation */}
       <div 
         className={cn(
-          "md:hidden absolute w-full bg-[#9b87f5] shadow-lg transition-all duration-300 overflow-hidden",
+          "md:hidden absolute w-full bg-[#9b87f5] shadow-lg transition-all duration-300 overflow-hidden z-50",
           isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         )}
       >

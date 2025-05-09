@@ -8,6 +8,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Form, FormField, FormItem, FormLabel, FormControl } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Donate = () => {
   const [donationAmount, setDonationAmount] = useState<number | null>(null);
@@ -16,6 +17,7 @@ const Donate = () => {
   const [paymentMethod, setPaymentMethod] = useState<"card" | "paypal" | "eft">("card");
   const [showCardFields, setShowCardFields] = useState(false);
   const form = useForm();
+  const isMobile = useIsMobile();
 
   const handleAmountSelect = (amount: number) => {
     setDonationAmount(amount);
@@ -44,13 +46,13 @@ const Donate = () => {
       <HeroSection
         title="DONATE"
         subtitle="Your Support Changes Lives"
-        className="pt-[300px] md:pt-[350px]" // Adjusted padding to move content below the image
+        className={isMobile ? "pt-[250px]" : "pt-[300px] md:pt-[350px]"} // Adjusted padding for mobile
       />
 
       {/* Donation Form Section */}
       <section className="section-padding bg-white">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             <div>
               <SectionHeading 
                 title="Your Donation Makes a Difference" 
@@ -66,36 +68,36 @@ const Donate = () => {
                 <h3 className="text-xl font-bold mb-4">How Your Donation Helps:</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-em-red mr-2 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-em-red mr-2 mt-1 flex-shrink-0" />
                     <span><strong>R100 provides</strong> a counseling session for a survivor</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-em-red mr-2 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-em-red mr-2 mt-1 flex-shrink-0" />
                     <span><strong>R250 supports</strong> a recovery group meeting for 10 people</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-em-red mr-2 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-em-red mr-2 mt-1 flex-shrink-0" />
                     <span><strong>R500 enables</strong> a community education workshop</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-em-red mr-2 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-em-red mr-2 mt-1 flex-shrink-0" />
                     <span><strong>R1,000 funds</strong> emergency assistance for a family in crisis</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg mb-6">
+              <div className="bg-gray-50 p-4 md:p-6 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-3">Other Ways to Support</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <Gift className="h-5 w-5 text-em-purple mr-2 mt-1" />
+                    <Gift className="h-5 w-5 text-em-purple mr-2 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold">In-Kind Donations</h4>
                       <p>We accept clothing, toiletries, non-perishable foods, and other essential items.</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <DollarSign className="h-5 w-5 text-em-purple mr-2 mt-1" />
+                    <DollarSign className="h-5 w-5 text-em-purple mr-2 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold">Corporate Partnerships</h4>
                       <p>Partner with us through funding, employee volunteerism, or matched giving programs.</p>
@@ -117,7 +119,7 @@ const Donate = () => {
             </div>
             
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-lg"
+              className="bg-white p-4 md:p-8 rounded-lg shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -128,12 +130,13 @@ const Donate = () => {
                 {/* Donation Type Selection */}
                 <div className="mb-6">
                   <p className="text-sm text-gray-600 mb-2">Select donation type:</p>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3 md:gap-4">
                     <Button 
                       type="button"
                       variant={donationType === "one-time" ? "default" : "outline"}
                       className={donationType === "one-time" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => setDonationType("one-time")}
+                      size={isMobile ? "sm" : "default"}
                     >
                       One-time
                     </Button>
@@ -142,6 +145,7 @@ const Donate = () => {
                       variant={donationType === "monthly" ? "default" : "outline"}
                       className={donationType === "monthly" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => setDonationType("monthly")}
+                      size={isMobile ? "sm" : "default"}
                     >
                       Monthly
                     </Button>
@@ -151,12 +155,13 @@ const Donate = () => {
                 {/* Amount Selection */}
                 <div className="mb-6">
                   <p className="text-sm text-gray-600 mb-2">Select amount (ZAR):</p>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 mb-3">
                     <Button 
                       type="button"
                       variant={donationAmount === 50 ? "default" : "outline"}
                       className={donationAmount === 50 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => handleAmountSelect(50)}
+                      size={isMobile ? "sm" : "default"}
                     >
                       R 50
                     </Button>
@@ -165,6 +170,7 @@ const Donate = () => {
                       variant={donationAmount === 100 ? "default" : "outline"}
                       className={donationAmount === 100 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => handleAmountSelect(100)}
+                      size={isMobile ? "sm" : "default"}
                     >
                       R 100
                     </Button>
@@ -173,6 +179,7 @@ const Donate = () => {
                       variant={donationAmount === 250 ? "default" : "outline"}
                       className={donationAmount === 250 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => handleAmountSelect(250)}
+                      size={isMobile ? "sm" : "default"}
                     >
                       R 250
                     </Button>
@@ -181,6 +188,7 @@ const Donate = () => {
                       variant={donationAmount === 500 ? "default" : "outline"}
                       className={donationAmount === 500 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => handleAmountSelect(500)}
+                      size={isMobile ? "sm" : "default"}
                     >
                       R 500
                     </Button>
@@ -189,6 +197,7 @@ const Donate = () => {
                       variant={donationAmount === 1000 ? "default" : "outline"}
                       className={donationAmount === 1000 ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => handleAmountSelect(1000)}
+                      size={isMobile ? "sm" : "default"}
                     >
                       R 1,000
                     </Button>
@@ -196,6 +205,7 @@ const Donate = () => {
                       type="button"
                       variant="outline"
                       className={customAmount ? "bg-em-purple text-white hover:bg-em-purple-dark" : ""}
+                      size={isMobile ? "sm" : "default"}
                     >
                       Other
                     </Button>
@@ -214,33 +224,36 @@ const Donate = () => {
                 {/* Payment Method Selection */}
                 <div className="mb-6">
                   <p className="text-sm text-gray-600 mb-2">Select payment method:</p>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-3 gap-2 md:gap-3">
                     <Button 
                       type="button"
                       variant={paymentMethod === "card" ? "default" : "outline"}
                       className={paymentMethod === "card" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => handlePaymentMethodChange("card")}
+                      size={isMobile ? "sm" : "default"}
                     >
-                      <CreditCard className="mr-2 h-4 w-4" />
-                      Card
+                      <CreditCard className="mr-1 md:mr-2 h-4 w-4" />
+                      <span className={isMobile ? "hidden sm:inline" : ""}>Card</span>
                     </Button>
                     <Button 
                       type="button"
                       variant={paymentMethod === "paypal" ? "default" : "outline"}
                       className={paymentMethod === "paypal" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => handlePaymentMethodChange("paypal")}
+                      size={isMobile ? "sm" : "default"}
                     >
-                      <Wallet className="mr-2 h-4 w-4" />
-                      PayPal
+                      <Wallet className="mr-1 md:mr-2 h-4 w-4" />
+                      <span className={isMobile ? "hidden sm:inline" : ""}>PayPal</span>
                     </Button>
                     <Button 
                       type="button"
                       variant={paymentMethod === "eft" ? "default" : "outline"}
                       className={paymentMethod === "eft" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
                       onClick={() => handlePaymentMethodChange("eft")}
+                      size={isMobile ? "sm" : "default"}
                     >
-                      <DollarSign className="mr-2 h-4 w-4" />
-                      EFT
+                      <DollarSign className="mr-1 md:mr-2 h-4 w-4" />
+                      <span className={isMobile ? "hidden sm:inline" : ""}>EFT</span>
                     </Button>
                   </div>
                 </div>
@@ -269,7 +282,7 @@ const Donate = () => {
 
                 {/* Credit Card Details - Only show when card is selected */}
                 {paymentMethod === "card" && (
-                  <div className="space-y-4 mb-6 p-4 bg-gray-50 rounded-lg">
+                  <div className="space-y-4 mb-6 p-3 md:p-4 bg-gray-50 rounded-lg">
                     <h4 className="font-semibold flex items-center">
                       <Lock className="h-4 w-4 mr-2 text-em-purple" />
                       Secure Card Payment
@@ -281,7 +294,7 @@ const Donate = () => {
                         <CardIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-3 md:gap-4">
                       <div>
                         <label className="block text-sm text-gray-600 mb-1">Expiry Date*</label>
                         <div className="relative">
@@ -304,7 +317,7 @@ const Donate = () => {
                 {/* PayPal Section */}
                 {paymentMethod === "paypal" && (
                   <div className="my-6 p-4 bg-blue-50 rounded-lg text-center">
-                    <p className="mb-3">You will be redirected to PayPal to complete your donation after clicking "Complete Donation".</p>
+                    <p className="mb-3 text-sm md:text-base">You will be redirected to PayPal to complete your donation after clicking "Complete Donation".</p>
                     <img 
                       src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" 
                       alt="PayPal" 
@@ -315,12 +328,12 @@ const Donate = () => {
                 
                 {/* Actions */}
                 <div className="mt-8">
-                  <Button type="submit" className="w-full bg-em-red hover:bg-em-red-dark text-lg py-6">
-                    <HeartHandshake className="mr-2 h-5 w-5" />
+                  <Button type="submit" className="w-full bg-em-red hover:bg-em-red-dark text-base md:text-lg py-4 md:py-6">
+                    <HeartHandshake className="mr-2 h-4 md:h-5 w-4 md:w-5" />
                     Complete Donation
                   </Button>
-                  <p className="text-center text-sm text-gray-500 mt-4 flex items-center justify-center">
-                    <Lock className="h-4 w-4 mr-1" />
+                  <p className="text-center text-xs md:text-sm text-gray-500 mt-4 flex items-center justify-center">
+                    <Lock className="h-3 md:h-4 w-3 md:w-4 mr-1" />
                     Your donation is secure and encrypted. You will receive a receipt via email.
                   </p>
                 </div>

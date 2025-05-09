@@ -132,11 +132,38 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8 lg:px-16;
+    @apply py-12 md:py-16 lg:py-24 px-4 md:px-8 lg:px-16;
   }
   
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  /* Mobile Specific Utilities */
+  .mobile-text-sm {
+    @apply text-sm md:text-base;
+  }
+  
+  .mobile-btn-sm {
+    @apply py-1.5 px-3 md:py-2.5 md:px-5;
+  }
+  
+  .mobile-py-4 {
+    @apply py-4 md:py-8;
+  }
+  
+  .mobile-px-4 {
+    @apply px-4 md:px-8;
+  }
+  
+  /* Fix for dropdowns on mobile */
+  .dropdown-menu {
+    @apply z-50 bg-white shadow-lg rounded-lg;
+  }
+  
+  /* Fix for scrolling issues on mobile */
+  .no-scroll-overflow {
+    @apply overflow-x-hidden;
   }
 }
 
@@ -180,12 +207,30 @@
   animation: slideIn 0.5s ease-out forwards;
 }
 
-@layer base {
-  * {
-    @apply border-border;
+/* Prevent text from being too small on mobile */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
   }
+  
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .text-xs {
+    font-size: 0.7rem !important;
+  }
+}
 
-  body {
-    @apply bg-background text-foreground;
+/* Fix for bottom navigation bar overlap on mobile */
+@supports (-webkit-touch-callout: none) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }

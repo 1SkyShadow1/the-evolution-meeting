@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface PageWrapperProps {
   backgroundImage?: string;
@@ -17,6 +18,7 @@ const PageWrapper = ({
   const [bgLoadError, setBgLoadError] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Add fade-in animation on page load
@@ -54,22 +56,24 @@ const PageWrapper = ({
         !validBackgroundImage && "bg-gray-100"
       )}
     >
-      {/* Hero section with background image - Full height for hero area */}
+      {/* Hero section with background image - Responsive height for hero area */}
       {validBackgroundImage && (
         <div className="relative">
           <div 
             className={cn(
-              "absolute inset-0 bg-cover bg-center bg-no-repeat h-[650px] md:h-[700px]",
+              "absolute inset-0 bg-cover bg-center bg-no-repeat",
+              isMobile ? "h-[500px]" : "h-[650px] md:h-[700px]",
               isDonate && "bg-contain bg-top bg-white" // Special styling for donate page
             )}
             style={{ 
               backgroundImage: `url(${backgroundImage})`,
-              backgroundAttachment: isDonate ? "scroll" : "fixed"
+              backgroundAttachment: isDonate || isMobile ? "scroll" : "fixed"
             }}
             aria-hidden="true"
           />
           <div className={cn(
-            "absolute inset-0 h-[650px] md:h-[700px]",
+            "absolute inset-0",
+            isMobile ? "h-[500px]" : "h-[650px] md:h-[700px]",
             isDonate ? "bg-white/5" : "bg-black/65"  // Lighter overlay for donate page
           )} aria-hidden="true" />
         </div>
