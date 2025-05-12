@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,7 +18,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Clock, Facebook, TikTokIcon, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, Youtube } from "lucide-react";
+import { TikTokIcon } from "@/components/ui/custom-icons";
 import { submitContactForm, ContactMessage } from "@/services/contact.service";
 
 const formSchema = z.object({

@@ -1,5 +1,6 @@
+
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Youtube, TikTok } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TikTokIcon } from "@/components/ui/custom-icons";
