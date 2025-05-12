@@ -38,9 +38,9 @@ const HeroSection = ({
 
   return (
     <div className={cn(
-      "relative z-10 flex items-center justify-center min-h-[500px] pt-20 pb-16 px-4 sm:pb-20 md:pb-24",
+      "relative z-10 flex items-center justify-center min-h-[500px] pt-20 pb-24 px-4 sm:pb-28 md:pb-32", // Increased bottom padding
       isDonate && "min-h-[400px]", // Shorter hero section for donate page
-      isMobile && !isDonate && "min-h-[450px] pt-16", // Adjusted height for mobile
+      isMobile && !isDonate && "min-h-[450px] pt-16 pb-20", // Adjusted height and padding for mobile
       className
     )}>
       <div className="container mx-auto text-center text-white">

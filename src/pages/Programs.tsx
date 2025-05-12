@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
@@ -11,13 +10,13 @@ const Programs = () => {
     <Layout>
       {/* Hero Section */}
       <HeroSection
-        backgroundImage="https://images.unsplash.com/photo-1582213782179-e0d4d3cce817?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+        backgroundImage="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
         title="OUR PROGRAMS"
         subtitle="Comprehensive Support for Healing and Recovery"
       />
 
       {/* GBV Support Section */}
-      <section id="gbv" className="section-padding">
+      <section id="gbv" className="section-padding pt-16 md:pt-20">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -26,6 +25,7 @@ const Programs = () => {
                 <SectionHeading 
                   title="Gender-Based Violence Support" 
                   centered={false}
+                  isFirstSection={true}
                 />
               </div>
               <p className="mb-4 text-lg">

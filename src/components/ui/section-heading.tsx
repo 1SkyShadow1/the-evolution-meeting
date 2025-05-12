@@ -6,18 +6,21 @@ interface SectionHeadingProps {
   subtitle?: string;
   centered?: boolean;
   className?: string;
+  isFirstSection?: boolean; // Add this prop to identify first sections
 }
 
 const SectionHeading = ({ 
   title, 
   subtitle, 
   centered = false, 
-  className 
+  className,
+  isFirstSection = false
 }: SectionHeadingProps) => {
   return (
     <div className={cn(
       "mb-10", 
       centered && "text-center",
+      isFirstSection && "mt-8 lg:mt-12", // Add top margin for first sections
       className
     )}>
       <h2 className="text-3xl md:text-4xl font-bold mb-2">{title}</h2>

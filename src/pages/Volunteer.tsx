@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
@@ -19,13 +18,14 @@ const Volunteer = () => {
       />
 
       {/* Why Volunteer Section */}
-      <section className="section-padding">
+      <section className="section-padding pt-16 md:pt-20">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeading 
                 title="Why Volunteer With Us?" 
                 centered={false}
+                isFirstSection={true}
               />
               <p className="text-lg mb-4">
                 Volunteers are the heart of our organization. Your time, skills, and compassion directly 

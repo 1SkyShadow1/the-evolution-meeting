@@ -46,6 +46,10 @@ const PageWrapper = ({
   // Check if it's the donate page to apply special styling
   const isDonate = backgroundImage?.includes("b8830c0d-22e0-4580-81ae-a85bcb770c5a");
   
+  // Check if it's the programs or volunteer page to apply special styling
+  const isPrograms = backgroundImage?.includes("1500673922987-e212871fec22");
+  const isVolunteer = backgroundImage?.includes("6a159869-62ad-4372-a1fa-5dd9a9a1871b");
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -63,7 +67,8 @@ const PageWrapper = ({
             className={cn(
               "absolute inset-0 bg-cover bg-center bg-no-repeat",
               isMobile ? "h-[500px]" : "h-[650px] md:h-[700px]",
-              isDonate && "bg-contain bg-top bg-white" // Special styling for donate page
+              isDonate && "bg-contain bg-top bg-white", // Special styling for donate page
+              (isPrograms || isVolunteer) && "bg-[center_top_-5rem]" // Adjust background position for programs/volunteer pages
             )}
             style={{ 
               backgroundImage: `url(${backgroundImage})`,
