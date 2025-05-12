@@ -47,7 +47,7 @@ const Events = () => {
             <div className="mt-10 border-t border-gray-600 pt-8">
               <h4 className="text-xl font-semibold mb-4">Follow Us for Event Updates</h4>
               <div className="flex flex-wrap justify-center gap-8">
-                <a href="https://www.facebook.com/TheEvolutionMeeting" target="_blank" rel="noopener noreferrer" 
+                <a href="https://facebook.com/www.evomeeting.org" target="_blank" rel="noopener noreferrer" 
                    className="flex flex-col items-center hover:scale-105 transition-transform">
                   <div className="bg-blue-600 rounded-full p-4 mb-2">
                     <Facebook className="h-8 w-8 text-white" />

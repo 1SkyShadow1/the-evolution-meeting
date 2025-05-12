@@ -86,7 +86,7 @@ const Footer = () => {
             <div className="mt-6">
               <h4 className="text-sm font-medium mb-2">Follow Us</h4>
               <div className="flex flex-wrap gap-4">
-                <a href="https://www.facebook.com/TheEvolutionMeeting" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="Facebook">
+                <a href="https://facebook.com/www.evomeeting.org" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="Facebook">
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a href="https://www.tiktok.com/@please.advise8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="TikTok">

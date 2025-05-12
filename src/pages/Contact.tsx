@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -82,7 +81,7 @@ const Contact = () => {
           <div className="bg-[#482683] rounded-lg p-6 mb-12 text-center">
             <h2 className="text-xl md:text-2xl font-bold mb-4">Connect With Us On Social Media</h2>
             <div className="flex flex-wrap justify-center gap-8">
-              <a href="https://www.facebook.com/TheEvolutionMeeting" target="_blank" rel="noopener noreferrer" 
+              <a href="https://facebook.com/www.evomeeting.org" target="_blank" rel="noopener noreferrer" 
                  className="flex items-center gap-2 hover:text-em-red-light transition-colors">
                 <Facebook className="h-6 w-6" />
                 <span>The Evolution Meeting</span>
