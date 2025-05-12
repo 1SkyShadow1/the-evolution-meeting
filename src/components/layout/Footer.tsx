@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Youtube, TikTok } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -84,15 +84,15 @@ const Footer = () => {
             {/* Social Media */}
             <div className="mt-6">
               <h4 className="text-sm font-medium mb-2">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-white hover:text-em-red-light transition-colors">
+              <div className="flex flex-wrap gap-4">
+                <a href="https://www.facebook.com/TheEvolutionMeeting" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="Facebook">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-white hover:text-em-red-light transition-colors">
-                  <Instagram className="h-5 w-5" />
+                <a href="https://www.tiktok.com/@please.advise8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="TikTok">
+                  <TikTok className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-white hover:text-em-red-light transition-colors">
-                  <Twitter className="h-5 w-5" />
+                <a href="https://www.youtube.com/@morethancon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="YouTube">
+                  <Youtube className="h-5 w-5" />
                 </a>
               </div>
             </div>

@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
-import { CalendarDays, Clock, AlertCircle } from "lucide-react";
+import { CalendarDays, Clock, AlertCircle, Facebook, TikTok, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Events = () => {
@@ -33,13 +33,43 @@ const Events = () => {
               We're currently planning our next series of community events and outreach programs. Follow our social media channels or check back here for updates on future events.
             </p>
             
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-4 justify-center mb-8">
               <Button className="bg-em-purple hover:bg-em-purple-dark">
                 Subscribe to Updates
               </Button>
               <Button variant="outline" className="border-em-purple text-white hover:bg-em-purple hover:text-white">
                 View Past Events
               </Button>
+            </div>
+            
+            {/* Social Media Follow Section */}
+            <div className="mt-10 border-t border-gray-600 pt-8">
+              <h4 className="text-xl font-semibold mb-4">Follow Us for Event Updates</h4>
+              <div className="flex flex-wrap justify-center gap-8">
+                <a href="https://www.facebook.com/TheEvolutionMeeting" target="_blank" rel="noopener noreferrer" 
+                   className="flex flex-col items-center hover:scale-105 transition-transform">
+                  <div className="bg-blue-600 rounded-full p-4 mb-2">
+                    <Facebook className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="text-sm">The Evolution Meeting</span>
+                </a>
+                
+                <a href="https://www.tiktok.com/@please.advise8" target="_blank" rel="noopener noreferrer" 
+                   className="flex flex-col items-center hover:scale-105 transition-transform">
+                  <div className="bg-black rounded-full p-4 mb-2">
+                    <TikTok className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="text-sm">@please.advise8</span>
+                </a>
+                
+                <a href="https://www.youtube.com/@morethancon" target="_blank" rel="noopener noreferrer" 
+                   className="flex flex-col items-center hover:scale-105 transition-transform">
+                  <div className="bg-red-600 rounded-full p-4 mb-2">
+                    <Youtube className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="text-sm">@morethancon</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

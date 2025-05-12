@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,7 +18,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, TikTok, Youtube } from "lucide-react";
 import { submitContactForm, ContactMessage } from "@/services/contact.service";
 
 const formSchema = z.object({
@@ -76,6 +77,28 @@ const Contact = () => {
 
       <section className="section-padding bg-[#222222] text-white">
         <div className="container mx-auto">
+          {/* Social Media Connect Banner */}
+          <div className="bg-[#482683] rounded-lg p-6 mb-12 text-center">
+            <h2 className="text-xl md:text-2xl font-bold mb-4">Connect With Us On Social Media</h2>
+            <div className="flex flex-wrap justify-center gap-8">
+              <a href="https://www.facebook.com/TheEvolutionMeeting" target="_blank" rel="noopener noreferrer" 
+                 className="flex items-center gap-2 hover:text-em-red-light transition-colors">
+                <Facebook className="h-6 w-6" />
+                <span>The Evolution Meeting</span>
+              </a>
+              <a href="https://www.tiktok.com/@please.advise8" target="_blank" rel="noopener noreferrer" 
+                 className="flex items-center gap-2 hover:text-em-red-light transition-colors">
+                <TikTok className="h-6 w-6" />
+                <span>@please.advise8</span>
+              </a>
+              <a href="https://www.youtube.com/@morethancon" target="_blank" rel="noopener noreferrer" 
+                 className="flex items-center gap-2 hover:text-em-red-light transition-colors">
+                <Youtube className="h-6 w-6" />
+                <span>@morethancon</span>
+              </a>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-white text-gray-800 rounded-lg shadow-lg p-8">
