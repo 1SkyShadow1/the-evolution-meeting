@@ -7,6 +7,7 @@ import FeaturedImpactStory from "@/components/impact/FeaturedImpactStory";
 import BedfordviewTalk from "@/components/impact/BedfordviewTalk";
 import EdenglenTalk from "@/components/impact/EdenglenTalk";
 import ProtestsSection from "@/components/impact/ProtestsSection";
+import CommunityOutreachGallery from "@/components/impact/CommunityOutreachGallery";
 import { motion } from "framer-motion";
 
 const ImpactStories = () => {
@@ -55,14 +56,25 @@ const ImpactStories = () => {
         </div>
       </section>
 
-      {/* More Impact Stories */}
+      {/* Community Outreach Gallery */}
       <section className="section-padding bg-gray-50">
+        <div className="container mx-auto">
+          <SectionHeading 
+            title="Community Outreach Gallery" 
+            centered={true}
+          />
+          <CommunityOutreachGallery />
+        </div>
+      </section>
+
+      {/* More Impact Stories */}
+      <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
             title="More Stories of Impact" 
             centered={true}
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ImpactStoryCard
               title="Community Workshop Series"
               excerpt="Our six-week workshop series equipped community leaders with tools to address substance abuse and gender-based violence in their neighborhoods."
@@ -75,13 +87,6 @@ const ImpactStories = () => {
               excerpt="Twenty young people completed our leadership program and are now peer educators in their schools, promoting healthy relationships and substance-free living."
               image="/lovable-uploads/a73250b9-5837-4843-92a3-60996ef464d1.png"
               date="January 25, 2016"
-              link="#"
-            />
-            <ImpactStoryCard
-              title="Corporate Partnership Initiative"
-              excerpt="Our new partnership with five local businesses is creating employment opportunities for survivors of gender-based violence and individuals in recovery."
-              image="/lovable-uploads/a83c16cf-cd8e-4974-b4f5-89cf7185846f.png"
-              date="December 10, 2016"
               link="#"
             />
           </div>

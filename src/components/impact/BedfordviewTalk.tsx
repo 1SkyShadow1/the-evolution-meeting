@@ -13,7 +13,7 @@ const BedfordviewTalk = () => {
       <div className="md:flex">
         <div className="md:w-1/2">
           <img 
-            src="/lovable-uploads/1998e04d-a2a3-4c69-a678-a50c5d488aed.png" 
+            src="/lovable-uploads/8db685e8-cc5c-4ae6-9d26-3fd7cba217fe.png" 
             alt="Bedfordview High School Talk" 
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -29,7 +29,7 @@ const BedfordviewTalk = () => {
             of substance abuse and gender-based violence affecting young people in our communities.
           </p>
           <p className="text-gray-600 mb-4">
-            The session engaged students in open conversations about recognizing warning signs, prevention strategies, 
+            The session engaged over 500 students in open conversations about recognizing warning signs, prevention strategies, 
             and available resources for support. Our interactive approach encouraged questions and dialogue.
           </p>
           <p className="text-gray-600">
@@ -37,6 +37,26 @@ const BedfordviewTalk = () => {
             seeking guidance from school counselors on these important issues.
           </p>
         </div>
+      </div>
+      <div className="bg-gray-50 p-6 flex flex-wrap gap-4">
+        <img 
+          src="/lovable-uploads/0816b797-6e82-4846-896f-1836bcce1b66.png" 
+          alt="Students at Bedfordview High School" 
+          className="w-full md:w-[48%] h-48 object-cover rounded-lg"
+          onError={(e) => {
+            console.error("Failed to load image");
+            e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+          }}
+        />
+        <img 
+          src="/lovable-uploads/6512f80a-9d0e-4a6f-b5d8-dc5ee1a45fc1.png" 
+          alt="Presentation at Bedfordview High School" 
+          className="w-full md:w-[48%] h-48 object-cover rounded-lg"
+          onError={(e) => {
+            console.error("Failed to load image");
+            e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+          }}
+        />
       </div>
     </motion.div>
   );

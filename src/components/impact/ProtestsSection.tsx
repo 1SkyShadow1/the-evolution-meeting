@@ -12,14 +12,16 @@ const ProtestsSection = () => {
       date: "June 2, 2022",
       location: "Edenvale Community Center",
       description: "Over 300 community members joined us in a peaceful protest demanding justice for victims of gender-based violence and highlighting the need for stricter enforcement of protection orders.",
-      image: "/lovable-uploads/016a2f5f-6e02-4e2e-b040-0c2296357317.png"
+      image: "/lovable-uploads/a8e3a81d-3b5f-4109-9309-39d20ff14efd.png",
+      additionalImage: "/lovable-uploads/c5f10a5b-7dc3-45d9-94f0-980fa1200298.png"
     },
     {
       title: "Anti-Substance Abuse Awareness Walk",
       date: "August 15, 2021",
       location: "Bedfordview to Edenvale",
       description: "Our 5km awareness walk brought together families affected by substance abuse, recovery program participants, and community supporters to raise awareness about addiction issues in our communities.",
-      image: "/lovable-uploads/aaa2303c-581a-48b6-8007-106629955e87.png"
+      image: "/lovable-uploads/0b84e2bc-7e3e-4b2b-8c70-54dac831f419.png",
+      additionalImage: "/lovable-uploads/016a2f5f-6e02-4e2e-b040-0c2296357317.png"
     }
   ];
 
@@ -61,6 +63,20 @@ const ProtestsSection = () => {
               </div>
               
               <p className="text-gray-600 mb-6 flex-grow">{protest.description}</p>
+              
+              {protest.additionalImage && (
+                <div className="mb-4 rounded-md overflow-hidden">
+                  <img 
+                    src={protest.additionalImage}
+                    alt={`Additional image for ${protest.title}`}
+                    className="w-full h-40 object-cover"
+                    onError={(e) => {
+                      console.error("Failed to load image");
+                      e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+                    }}
+                  />
+                </div>
+              )}
               
               <Button 
                 asChild

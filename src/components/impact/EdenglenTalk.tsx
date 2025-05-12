@@ -13,7 +13,7 @@ const EdenglenTalk = () => {
       <div className="md:flex">
         <div className="md:w-1/2 order-1 md:order-2">
           <img 
-            src="/lovable-uploads/72b20df4-3fe9-4a05-8415-b2c650231b5c.png" 
+            src="/lovable-uploads/6512f80a-9d0e-4a6f-b5d8-dc5ee1a45fc1.png" 
             alt="Edenglen High School Outreach" 
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -37,6 +37,26 @@ const EdenglenTalk = () => {
             and provide peer guidance on these important issues.
           </p>
         </div>
+      </div>
+      <div className="bg-gray-50 p-6 flex flex-wrap gap-4">
+        <img 
+          src="/lovable-uploads/8db685e8-cc5c-4ae6-9d26-3fd7cba217fe.png" 
+          alt="Students at Edenglen High School" 
+          className="w-full md:w-[48%] h-48 object-cover rounded-lg"
+          onError={(e) => {
+            console.error("Failed to load image");
+            e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+          }}
+        />
+        <img 
+          src="/lovable-uploads/91f606d5-123d-460e-b42b-4556d34e79c3.png" 
+          alt="School officials discussion" 
+          className="w-full md:w-[48%] h-48 object-cover rounded-lg"
+          onError={(e) => {
+            console.error("Failed to load image");
+            e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+          }}
+        />
       </div>
     </motion.div>
   );

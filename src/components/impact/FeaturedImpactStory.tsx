@@ -40,6 +40,29 @@ const FeaturedImpactStory = () => {
           </div>
         </div>
       </div>
+      <div className="p-6 bg-white">
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="md:w-1/2">
+            <img
+              src="/lovable-uploads/bafd2c64-7b60-4b51-9cc0-73ba028b6d28.png"
+              alt="Radio interview at Rainbow FM"
+              className="w-full h-48 object-cover rounded-lg"
+              onError={(e) => {
+                console.error("Failed to load image");
+                e.currentTarget.src = "https://placehold.co/600x400?text=Image+Not+Found";
+              }}
+            />
+          </div>
+          <div className="md:w-1/2">
+            <h4 className="font-bold mb-2">Radio Awareness Campaign</h4>
+            <p className="text-gray-600 text-sm">
+              Our team participated in a series of radio interviews on Rainbow FM to discuss substance abuse 
+              prevention and recovery services. These broadcasts reached an estimated 50,000 listeners 
+              across the Gauteng province, helping to spread our message and connect those in need with our services.
+            </p>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };
