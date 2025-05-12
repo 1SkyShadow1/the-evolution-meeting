@@ -3,7 +3,8 @@ import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
-import { CalendarDays, Clock, AlertCircle, Facebook, TikTok, Youtube } from "lucide-react";
+import { CalendarDays, Clock, AlertCircle, Facebook, Youtube } from "lucide-react";
+import { TikTokIcon } from "@/components/ui/custom-icons";
 import { Link } from "react-router-dom";
 
 const Events = () => {
@@ -57,7 +58,7 @@ const Events = () => {
                 <a href="https://www.tiktok.com/@please.advise8" target="_blank" rel="noopener noreferrer" 
                    className="flex flex-col items-center hover:scale-105 transition-transform">
                   <div className="bg-black rounded-full p-4 mb-2">
-                    <TikTok className="h-8 w-8 text-white" />
+                    <TikTokIcon className="h-8 w-8 text-white" />
                   </div>
                   <span className="text-sm">@please.advise8</span>
                 </a>

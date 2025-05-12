@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,7 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Clock, Facebook, TikTok, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, TikTokIcon, Youtube } from "lucide-react";
 import { submitContactForm, ContactMessage } from "@/services/contact.service";
 
 const formSchema = z.object({
@@ -88,7 +87,7 @@ const Contact = () => {
               </a>
               <a href="https://www.tiktok.com/@please.advise8" target="_blank" rel="noopener noreferrer" 
                  className="flex items-center gap-2 hover:text-em-red-light transition-colors">
-                <TikTok className="h-6 w-6" />
+                <TikTokIcon className="h-6 w-6" />
                 <span>@please.advise8</span>
               </a>
               <a href="https://www.youtube.com/@morethancon" target="_blank" rel="noopener noreferrer" 
