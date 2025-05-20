@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
@@ -38,6 +39,11 @@ const Donate = () => {
     e.preventDefault();
     // Process donation - in a real app this would connect to a payment processor
     alert("Thank you for your donation! This is a demo, so no actual payment will be processed.");
+  };
+
+  const handlePaypalDonation = () => {
+    // Open PayPal donation link in a new tab
+    window.open(`https://www.paypal.com/donate?business=Evolutionmeeting14%40gmail.com&currency_code=ZAR`, '_blank');
   };
 
   return (
@@ -329,7 +335,11 @@ const Donate = () => {
                 
                 {/* Actions */}
                 <div className="mt-8">
-                  <Button type="submit" className="w-full bg-em-red hover:bg-em-red-dark text-base md:text-lg py-4 md:py-6">
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-em-red hover:bg-em-red-dark text-base md:text-lg py-4 md:py-6"
+                    onClick={paymentMethod === "paypal" ? handlePaypalDonation : undefined}
+                  >
                     <HeartHandshake className="mr-2 h-4 md:h-5 w-4 md:w-5" />
                     Complete Donation
                   </Button>
@@ -358,7 +368,7 @@ const Donate = () => {
             <div className="space-y-4 mb-6">
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold">Account Name:</span>
-                <span>The Evolution Meeting</span>
+                <span>The Evolution Meeting NPO</span>
               </div>
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold">Bank:</span>
@@ -366,7 +376,11 @@ const Donate = () => {
               </div>
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold">Account Number:</span>
-                <span>12345678910</span>
+                <span>63119800109</span>
+              </div>
+              <div className="flex justify-between border-b pb-2">
+                <span className="font-semibold">Account Type:</span>
+                <span>Gold Business Account</span>
               </div>
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold">Branch Code:</span>
@@ -416,7 +430,10 @@ const Donate = () => {
                 className="h-16 mx-auto mb-6"
               />
               <p className="mb-4">PayPal allows you to donate securely using your credit card, debit card, or PayPal balance.</p>
-              <Button className="bg-blue-500 hover:bg-blue-600 text-lg py-4 px-8 mb-4">
+              <Button 
+                className="bg-blue-500 hover:bg-blue-600 text-lg py-4 px-8 mb-4"
+                onClick={handlePaypalDonation}
+              >
                 Donate with PayPal
               </Button>
               <p className="text-sm text-gray-500 mt-2">
