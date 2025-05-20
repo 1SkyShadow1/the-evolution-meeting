@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Youtube } from "lucide-react";
+import { Facebook, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TikTokIcon } from "@/components/ui/custom-icons";
@@ -86,7 +86,7 @@ const Footer = () => {
             <div className="mt-6">
               <h4 className="text-sm font-medium mb-2">Follow Us</h4>
               <div className="flex flex-wrap gap-4">
-                <a href="https://facebook.com/www.evomeeting.org" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="Facebook">
+                <a href="https://www.facebook.com/www.evomeeting.org" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="Facebook">
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a href="https://www.tiktok.com/@please.advise8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="TikTok">
@@ -94,6 +94,9 @@ const Footer = () => {
                 </a>
                 <a href="https://www.youtube.com/@morethancon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="YouTube">
                   <Youtube className="h-5 w-5" />
+                </a>
+                <a href="https://x.com/Evomeeting2" target="_blank" rel="noopener noreferrer" className="text-white hover:text-em-red-light transition-colors" aria-label="Twitter">
+                  <Twitter className="h-5 w-5" />
                 </a>
               </div>
             </div>

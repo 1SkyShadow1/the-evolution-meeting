@@ -57,6 +57,7 @@ const Donate = () => {
               <SectionHeading 
                 title="Your Donation Makes a Difference" 
                 centered={false}
+                isFirstSection={true}
               />
               <p className="text-lg mb-6">
                 When you donate to The Evolution Meeting, you directly support survivors of gender-based violence 
@@ -406,7 +407,7 @@ const Donate = () => {
           />
           <div className="max-w-xl mx-auto text-center">
             <p className="mb-6">
-              You can also donate instantly and securely using PayPal. Click the button below to proceed.
+              You can also donate instantly and securely using PayPal. Send your donation to our PayPal account: <span className="font-semibold">Evolutionmeeting14@gmail.com</span> or click the button below to proceed.
             </p>
             <div className="bg-blue-50 p-8 rounded-lg shadow-md">
               <img 
