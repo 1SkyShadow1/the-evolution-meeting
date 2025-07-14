@@ -9,7 +9,21 @@ import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Donate = () => {
-  const [paymentMethod, setPaymentMethod] = useState<"payfast" | "paypal">("payfast");
+  const [paymentMethod, setPaymentMethod] = useState<"payfast" | "paypal" | "eft">("payfast");
+  const [eftAmount, setEftAmount] = useState(100);
+  const eftBankDetails = {
+    accountName: "THE EVOLUTION MEETING NPO",
+    accountNumber: "63119800109",
+    branchName: "GEZINA",
+    branchCode: "250655",
+    swiftCode: "FIRNZAJJ",
+    accountType: "NPO account",
+    reference: "Donation",
+  };
+  const handleCopyEftDetails = () => {
+    const details = `Bank: First National Bank (FNB)\nAccount Name: ${eftBankDetails.accountName}\nAccount Number: ${eftBankDetails.accountNumber}\nBranch Name: ${eftBankDetails.branchName}\nBranch Code: ${eftBankDetails.branchCode}\nSWIFT Code: ${eftBankDetails.swiftCode}\nAccount Type: ${eftBankDetails.accountType}\nAmount: R${eftAmount}\nReference: ${eftBankDetails.reference}`;
+    navigator.clipboard.writeText(details);
+  };
   const isMobile = useIsMobile();
 
   const handlePaypalDonation = () => {
@@ -36,7 +50,7 @@ const Donate = () => {
             </p>
             <div className="mb-6">
               <p className="text-sm text-gray-600 mb-2">Choose payment method:</p>
-              <div className="grid grid-cols-2 gap-2 md:gap-4">
+              <div className="grid grid-cols-3 gap-2 md:gap-4">
                 <Button
                   type="button"
                   variant={paymentMethod === "payfast" ? "default" : "outline"}
@@ -56,6 +70,16 @@ const Donate = () => {
                 >
                   <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" className="h-4 w-4 mr-1 inline" />
                   PayPal
+                </Button>
+                <Button
+                  type="button"
+                  variant={paymentMethod === "eft" ? "default" : "outline"}
+                  className={paymentMethod === "eft" ? "bg-em-purple hover:bg-em-purple-dark" : ""}
+                  onClick={() => setPaymentMethod("eft")}
+                  size={isMobile ? "sm" : "default"}
+                >
+                  <span className="mr-1">🏦</span>
+                  Bank EFT
                 </Button>
               </div>
             </div>
@@ -123,6 +147,44 @@ return true;
                     Donate with PayPal
                   </Button>
                 </div>
+              </div>
+            )}
+            {paymentMethod === "eft" && (
+              <div className="my-6 p-4 bg-green-50 rounded-lg">
+                <p className="mb-3 text-sm md:text-base">Use the details below to make an EFT (bank transfer) from your banking app or online banking. Please use your name as reference.</p>
+                <div className="mb-4 flex flex-col gap-2">
+                  <div>
+                    <label className="font-semibold">Amount (ZAR):</label>
+                    <div className="flex gap-2 mt-1">
+                      {[50, 100, 250, 500].map((amt) => (
+                        <Button key={amt} type="button" variant={eftAmount === amt ? "default" : "outline"} onClick={() => setEftAmount(amt)}>{`R${amt}`}</Button>
+                      ))}
+                      <Input
+                        type="number"
+                        min={1}
+                        value={eftAmount}
+                        onChange={e => setEftAmount(Number(e.target.value))}
+                        className="w-24"
+                        placeholder="Other"
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <span><b>Bank:</b> First National Bank (FNB)</span>
+                    <span><b>Account Name:</b> {eftBankDetails.accountName}</span>
+                    <span><b>Account Number:</b> {eftBankDetails.accountNumber}</span>
+                    <span><b>Branch Name:</b> {eftBankDetails.branchName}</span>
+                    <span><b>Branch Code:</b> {eftBankDetails.branchCode}</span>
+                    <span><b>SWIFT Code:</b> {eftBankDetails.swiftCode}</span>
+                    <span><b>Account Type:</b> {eftBankDetails.accountType}</span>
+                    <span><b>Reference:</b> {eftBankDetails.reference}</span>
+                    <span><b>Amount:</b> R{eftAmount}</span>
+                  </div>
+                  <Button type="button" className="mt-4 w-full bg-em-purple hover:bg-em-purple-dark text-white" onClick={handleCopyEftDetails}>
+                    Copy All Details
+                  </Button>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">After copying, open your banking app or online banking and paste the details to make your donation via EFT.</p>
               </div>
             )}
           </div>

@@ -67,7 +67,7 @@ const Programs = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/images/gbv-support.jpg" 
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" 
                 alt="Gender-Based Violence Support" 
                 className="rounded-lg shadow-xl max-w-full h-auto"
               />
@@ -82,7 +82,7 @@ const Programs = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 flex justify-center">
               <img 
-                src="/images/substance-abuse.jpg" 
+                src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" 
                 alt="Substance Abuse Recovery" 
                 className="rounded-lg shadow-xl max-w-full h-auto"
               />
@@ -187,7 +187,7 @@ const Programs = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/images/community-engagement.jpg" 
+                src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80" 
                 alt="Community Engagement & Education" 
                 className="rounded-lg shadow-xl max-w-full h-auto"
               />
