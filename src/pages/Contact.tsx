@@ -210,7 +210,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Address</h3>
-                    <p className="text-gray-600">Unit 189, 67 on 7th avenue, Edenvale 1610<br />South Africa</p>
+                    <p className="text-gray-600">61, 6th Avenue, Edenvale, 1609</p>
                   </div>
                 </div>
                 
@@ -240,7 +240,7 @@ const Contact = () => {
       {/* Google Map */}
       <section className="h-96 w-full">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.555167714315!2d28.16325378819838!3d-26.143114659165306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9516a24893438d%3A0xa496fdee40b33cf!2s67%20on%207th%20Avenue!5e0!3m2!1sen!2sus!4v1714913923032!5m2!1sen!2sus" 
+          src="https://www.google.com/maps?q=61,+6th+Avenue,+Edenvale,+1609&output=embed" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
