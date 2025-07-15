@@ -30,6 +30,13 @@ const Donate = () => {
     window.open(`https://www.paypal.com/donate?business=Evolutionmeeting14%40gmail.com&currency_code=ZAR`, '_blank');
   };
 
+  const handlePayFastSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // If you need to add custom validation or logic, do it here
+    // For now, just allow the form to submit
+    // If you want to prevent default, use e.preventDefault();
+    return true;
+  };
+
   return (
     <Layout>
       <HeroSection
@@ -86,23 +93,7 @@ const Donate = () => {
             {paymentMethod === "payfast" && (
               <div className="my-6">
                 {/* Official Payfast Donate Now form and button */}
-                <script type="text/javascript" dangerouslySetInnerHTML={{__html:`
-function customQuantitiesPayFast (formReference) {
-formReference['amount'].value = formReference['amount'].value * formReference['custom_quantity'].value;
-return true;
-}
-function actionPayFastJavascript ( formReference ) {
-let shippingValidOrOff = typeof shippingValid !== 'undefined' ? shippingValid : true; 
-let customValid = shippingValidOrOff ? customQuantitiesPayFast( formReference ) : false;
- if (typeof shippingValid !== 'undefined' && !shippingValid) {
-return false;
-}
-if (typeof customValid !== 'undefined' && !customValid) {
-return false;
-}
-return true;
-}`}} />
-                <form onSubmit="return actionPayFastJavascript( this );" name="PayFastPayNowForm" action="https://payment.payfast.io/eng/process" method="post">
+                <form onSubmit={handlePayFastSubmit} name="PayFastPayNowForm" action="https://payment.payfast.io/eng/process" method="post">
                   <input required type="hidden" name="cmd" value="_paynow" />
                   <input required type="hidden" name="receiver" pattern="[0-9]" value="12836632" />
                   <table>
