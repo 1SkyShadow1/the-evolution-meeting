@@ -41,7 +41,7 @@ const About = () => {
               <div className="relative">
                 <div className="bg-em-red absolute bottom-0 right-0 w-72 h-72 rounded-full opacity-20 -z-10 translate-x-10 translate-y-10"></div>
                 <img 
-                  src="/images/community-engagement.jpg" 
+                  src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" 
                   alt="The Evolution Meeting Community" 
                   className="rounded-lg shadow-xl max-w-full object-cover"
                 />
