@@ -67,7 +67,7 @@ const Volunteer = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/images/community-engagement.jpg" 
+                src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" 
                 alt="Volunteers at The Evolution Meeting" 
                 className="rounded-lg shadow-xl max-w-full h-auto"
               />
