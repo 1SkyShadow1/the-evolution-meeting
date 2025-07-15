@@ -239,7 +239,7 @@ const Programs = () => {
               <Link to="/contact">Contact Us</Link>
             </Button>
             <Button asChild variant="outline" className="border-em-purple text-em-purple hover:bg-em-purple hover:text-white">
-              <a href="tel:+27610994222">Call Helpline: (+27) 61 099 4222</a>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

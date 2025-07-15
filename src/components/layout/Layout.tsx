@@ -30,6 +30,8 @@ const Layout = ({ children }: LayoutProps) => {
     const bgImage = backgroundImages[location.pathname] || "";
     console.log("Setting background image:", bgImage, "for route:", location.pathname);
     setBackgroundImage(bgImage);
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
